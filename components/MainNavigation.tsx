@@ -8,11 +8,11 @@ export default function MainNavigation() {
   ];
   return (
     <nav>
-      <ul className="w flex justify-around">
+      <ul className="w-full flex justify-around">
         {menu.map((item, index) => (
           <li key={index}>
             <Link
-              className=" flex h-15 w-20.75 items-center justify-center  hover:bg-[#09637E] text-black"
+              className=" flex h-15 w-20.75 items-center justify-center  hover:bg-[#09637E] text-white"
               href={item.href}
             >
               {item.title}
