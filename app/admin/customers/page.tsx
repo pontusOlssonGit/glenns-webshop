@@ -1,5 +1,5 @@
-import type { ProductsResponse } from "../types";
-import AddProductButton from "../components/ProductAddButton";
+import type { ProductsResponse } from "@/types/types";
+import AddProductButton from "@/components/ProductAddButton";
 import {
   SquarePen,
   Trash2,

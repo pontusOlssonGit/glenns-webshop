@@ -1,6 +1,6 @@
-import type { ProductsResponse } from "../types";
+import type { ProductsResponse } from "@/types/types";
 import Link from 'next/link';
-import AddProductButton from "../components/ProductAddButton";
+import AddProductButton from "@/components/ProductAddButton";
 import { SquarePen, Trash2 } from "lucide-react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
