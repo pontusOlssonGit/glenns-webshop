@@ -2,6 +2,7 @@ import type { Category, ProductsResponse } from "./types";
 import Header from "./components/header";
 import Footer from "./components/Footer-component";
 import ProductsTable from "./components/ProductsTable";
+import Search2 from "@/components/search2";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 const DEFAULT_LIMIT = 20;
@@ -32,6 +33,7 @@ export default async function Home({
     <>
       <Header products={allProducts} total={totalProducts} categories={categories} />
       <main className="w-full pl-70 pt-70 pb-15 bg-gray-50">
+        <Search2 products={products}/>
         <div>
           <ProductsTable products={products} categories={categories} />
         </div>
