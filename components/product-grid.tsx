@@ -2,6 +2,7 @@
 import { Product } from "@/types/types";
 import { Check, Square, SquareArrowDownIcon, StarIcon, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
   return (
@@ -12,6 +13,7 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
             key={product.id}
             className="p-4 border-b cursor-pointer flex flex-col gap-2 justify-center items-center mt-auto"
           >
+            <Link href={`/products/${product.id}`} className="w-full items-center justify-center flex flex-col">
             <Image
               src={product.thumbnail}
               alt={product.title}
@@ -21,6 +23,7 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
             <h3 className="text-md font-semibold mb-2 hover:underline">
               {product.title}
             </h3>
+            </Link>
             <p className="text-gray-600 mb-4 text-xs">{product.description}</p>
             <div className="flex items-center justify-end w-full">
               <span className="text-sm font-bold">{Math.ceil(product.price)} kr</span>
