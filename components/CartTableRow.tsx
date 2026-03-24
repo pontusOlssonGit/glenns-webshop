@@ -17,7 +17,7 @@ export default function CartTableRow({ product }: { product: Product }) {
       <td className="px-3 py-2 w-70 align-middle">
         <div className="flex flex-col">
           <a
-            href={`/${product.id}`}
+            href={`products/${product.id}`}
             className="font-semibold text-blue-500 hover:text-blue-700 whitespace-nowrap truncate"
           >
             {product.title}
