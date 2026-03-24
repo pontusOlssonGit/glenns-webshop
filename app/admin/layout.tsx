@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import { Inter } from "next/font/google";
-import Header from "@/components/ClientSideHeader";
+import Sidebar from "@/components/Sidebar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Glenn's Webbutik",
-  description: "Webbutik",
+  title: "Webbutik Admin",
+  description: "Admin panel for Webbutik",
 };
 
 export default function RootLayout({
@@ -20,9 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-100`}>
-        <Header />
-        <div>{children}</div>
+      <body className={inter.className}>
+        <div>
+          <Sidebar />
+          {children}
+        </div>
       </body>
     </html>
   );

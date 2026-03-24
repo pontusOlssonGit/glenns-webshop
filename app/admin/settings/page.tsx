@@ -1,13 +1,13 @@
-import AddProductButton from "../components/ProductAddButton";
+import AddProductButton from "@/components/ProductAddButton";
 
-export default function AnalyticsPage() {
+export default function SettingsPage() {
   return (
     <>
         <header className="fixed left-64 top-0 right-0 z-30">
             <section className="px-8 py-4 bg-white flex items-center justify-between">
                 <div >
-                    <h1 className="text-xl font-bold">Analytics</h1>
-                    <span className="text-gray-500 text-sm">Track your store performance</span>
+                    <h1 className="text-xl font-bold">Settings</h1>
+                    <span className="text-gray-500 text-sm">Configure your store preferences</span>
                 </div>
                 <AddProductButton />
             </section>
