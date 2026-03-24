@@ -1,24 +1,30 @@
+import { ShoppingCart, ShoppingCartIcon, User2Icon } from "lucide-react";
 import Link from "next/link";
 
 export default function MainNavigation() {
   const menu = [
-    { title: "Home", href: "/" },
-    { title: "Cart", href: "/cart" },
-    { title: "About", href: "/" },
+    { title: "Logga in", href: "/login" },
+    { title: "Skapa konto", href: "/signup" },
   ];
   return (
-    <nav>
-      <ul className="w-full flex justify-around">
+    <nav className="pt-3 pb-3">
+      <ul className="w-full flex justify-around items-center gap-4">
+        <span><User2Icon className="text-white w-10 h-10" /></span>
+        <div className="flex flex-col">
         {menu.map((item, index) => (
-          <li key={index}>
+          <li key={index} className="items-center gap-1 hover:underline text-white">
             <Link
-              className=" flex h-15 w-20.75 items-center justify-center  hover:bg-[#09637E] text-white"
               href={item.href}
             >
-              {item.title}
+              <span className="font-semibold text-sm">{item.title}</span>
             </Link>
           </li>
         ))}
+        </div>
+        <Link href="/cart" className="flex items-center gap-1">
+          <li><ShoppingCartIcon className="text-gray-600 w-10 h-10" /></li>
+        </Link>
+        
       </ul>
     </nav>
   );

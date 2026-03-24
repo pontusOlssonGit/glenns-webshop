@@ -10,7 +10,7 @@ import {
   toProductFormValues,
   updateProduct,
 } from '../lib/productsApi';
-import { Category, ProductsResponse } from '../types';
+import { Category, ProductsResponse } from '@/types/types';
 import ProductFormModal from './ProductFormModal';
 import ProductsTableRow from './ProductsTableRow';
 import { OPEN_CREATE_PRODUCT_EVENT } from './ProductAddButton';

@@ -9,7 +9,7 @@ export default async function Cart() {
     `${API_URL}/products/?_limit=${defaultLimit}&_sort=id&_order=asce`,
   ).then((res) => res.json());
   return (
-    <div className="pt-15 max-w-6xl mx-auto!">
+    <div className="pt-15 max-w-6xl mx-auto! bg-white">
       <h1 className="text-4xl text-center ">Your Cart (4 items)</h1>
       <table className="w-full mt-10!">
         <thead>
