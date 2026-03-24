@@ -1,3 +1,4 @@
+"use client";
 import { Product } from "@/types/types";
 import { Check, Square, SquareArrowDownIcon, StarIcon, X } from "lucide-react";
 import Image from "next/image";
