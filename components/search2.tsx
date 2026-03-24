@@ -20,7 +20,11 @@ export default function Search2({ products = [] }: Props) {
         p.description.toLowerCase().includes(lower) ||
         (p.brand?.toLowerCase().includes(lower) ?? false) ||
         (p.category?.name?.toLowerCase().includes(lower) ?? false) ||
-        p.price.toString().includes(lower)
+	(p.rating?.toString().includes(lower) ?? false) ||
+        p.price.toString().includes(lower) ||
+	(p.reviews?.some(r => r.comment.toLowerCase().includes(lower) ||
+               r.reviewerName.toLowerCase().includes(lower) ||
+               r.rating.toString().includes(lower)) ?? false)
       );
     });
 
