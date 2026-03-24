@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Source_Sans_3, } from "next/font/google";
 import Header from "@/components/ClientSideHeader";
 
-const inter = Inter({
+const sourceSansPro = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -20,9 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-100`}>
+      <body className={`${sourceSansPro.className} bg-gray-100 text-gray-900`}>
         <Header />
-        <div className="pr-20 pl-20">{children}</div>
+        <div className="pr-40 pl-40">{children}</div>
       </body>
     </html>
   );

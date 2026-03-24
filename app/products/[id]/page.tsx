@@ -1,6 +1,6 @@
+import ProductComponent from "@/components/product";
 
-
-export default async function Product({ params }: { params: Promise<{ id: number }>  }) {
+export default async function ProductPage({ params }: { params: Promise<{ id: number }>  }) {
 
   const { id: paramsId } = await params;
 
@@ -8,10 +8,6 @@ export default async function Product({ params }: { params: Promise<{ id: number
 
   
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
-      <p className="text-gray-600 mb-4">{product.description}</p>
-      <p className="text-lg font-semibold">{Math.ceil(product.price)} kr</p>
-    </div>
+    <ProductComponent product={product} />
   )
 }
