@@ -3,6 +3,7 @@ import { Product } from "@/types/types";
 import { Check, Square, SquareArrowDownIcon, StarIcon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ProductRating from "./product-rating";
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
   return (
@@ -29,25 +30,7 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
               <span className="text-sm font-bold">{Math.ceil(product.price)} kr</span>
             </div>
             <div className="flex items-center justify-between w-full">
-              <span className="text-xs flex gap-1 items-center">
-                {product.rating ?? 0}
-                {(Math.round(product.rating ?? 0)) >= 1 && (
-                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
-                )}
-                {(Math.round(product.rating ?? 0)) >= 2 && (
-                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
-                )}
-                {(Math.round(product.rating ?? 0)) >= 3 && (
-                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
-                )}
-                {(Math.round(product.rating ?? 0)) >= 4 && (
-                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
-                )}
-                {(Math.round(product.rating ?? 0)) >= 5 && (
-                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
-                )}
-                
-              </span>
+              <ProductRating productRating={product.rating} />
               <span className="text-xs flex gap-1 items-center">
                 Webblager {product.availabilityStatus === "In Stock" ? (
                  <Check className="w-4 h-4 text-green-900" />
