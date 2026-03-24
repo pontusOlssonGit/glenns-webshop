@@ -1,5 +1,5 @@
 import { Product } from "@/types/types";
-import { StarIcon } from "lucide-react";
+import { Check, Square, SquareArrowDownIcon, StarIcon, X } from "lucide-react";
 import Image from "next/image";
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
@@ -28,24 +28,31 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
             <div className="flex items-center justify-between w-full">
               <span className="text-xs flex gap-1 items-center">
                 {product.rating ?? 0}
-                {(product.rating ?? 0) > 1 && (
-                  <StarIcon className="stroke-amber-400 fill-amber-400 w-3 h-3" />
+                {(Math.round(product.rating ?? 0)) >= 1 && (
+                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
                 )}
-                {(product.rating ?? 0) > 2 && (
-                  <StarIcon className="stroke-amber-400 fill-amber-400 w-3 h-3" />
+                {(Math.round(product.rating ?? 0)) >= 2 && (
+                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
                 )}
-                {(product.rating ?? 0) > 3 && (
-                  <StarIcon className="stroke-amber-400 fill-amber-400 w-3 h-3" />
+                {(Math.round(product.rating ?? 0)) >= 3 && (
+                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
                 )}
-                {(product.rating ?? 0) > 4 && (
-                  <StarIcon className="stroke-amber-400 fill-amber-400 w-3 h-3" />
+                {(Math.round(product.rating ?? 0)) >= 4 && (
+                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
                 )}
-                {(product.rating ?? 0) > 5 && (
-                  <StarIcon className="stroke-amber-400 fill-amber-400 w-3 h-3" />
+                {(Math.round(product.rating ?? 0)) >= 5 && (
+                  <StarIcon className="stroke-amber-300 fill-amber-300 w-3 h-3" />
                 )}
+                
               </span>
-              <span className="text-xs">
-                Webblager {product.availabilityStatus}
+              <span className="text-xs flex gap-1 items-center">
+                Webblager {product.availabilityStatus === "In Stock" ? (
+                 <Check className="w-4 h-4 text-green-900" />
+                ) : product.availabilityStatus === "Low Stock" ? (
+                  <Square className="w-4 h-4 text-yellow-600" />
+                ) : (
+                 <X className="w-4 h-4 text-red-600" />
+                )}
               </span>
             </div>
           </div>
