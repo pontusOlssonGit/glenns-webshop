@@ -1,7 +1,7 @@
-import type { Category, ProductsResponse } from "../types";
-import Header from "../components/header";
-import Footer from "../components/Footer-component";
-import ProductsTable from "../components/ProductsTable";
+import type { Category, ProductsResponse } from "../../types/types";
+import Header from "@/components/header";
+import Footer from "@/components/Footer-component";
+import ProductsTable from "@/components/ProductsTable";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 const DEFAULT_LIMIT = 20;

@@ -6,31 +6,31 @@ import { Barcode, ChartLine, ShoppingCart, Users, Settings } from 'lucide-react'
 
 const menuItems = [
     {
-        href: '/',
+        href: '/admin',
         label: 'Products',
         icon: Barcode,
         color: 'purple',
     },
     {
-        href: '/analytics',
+        href: '/admin/analytics',
         label: 'Analytics',
         icon: ChartLine,
         color: 'blue',
     },
     {
-        href: '/orders',
+        href: '/admin/orders',
         label: 'Orders',
         icon: ShoppingCart,
         color: 'green',
     },
     {
-        href: '/customers',
+        href: '/admin/customers',
         label: 'Customers',
         icon: Users,
         color: 'yellow',
     },
     {
-        href: '/settings',
+        href: '/admin/settings',
         label: 'Settings',
         icon: Settings,
         color: 'red',
