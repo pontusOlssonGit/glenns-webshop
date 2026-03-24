@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Sidebar from "@/components/Sidebar";
+import Header from "@/components/ClientSideHeader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Webbutik Admin",
-  description: "Admin panel for Webbutik",
+  title: "Glenn's Webbutik",
+  description: "Webbutik",
 };
 
 export default function RootLayout({
@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-100`}>
+        <Header />
         <div>{children}</div>
       </body>
     </html>
