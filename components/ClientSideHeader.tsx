@@ -11,6 +11,9 @@ export default function Header() {
     "Scudmissiler",
     "Stridsflyg",
     "Minröjare",
+    "Ubåtar",
+    "Artilleri",
+    "Raketförsvarssystem",
   ];
   return (
     <header className="bg-[#1a1a1d] w-full">
