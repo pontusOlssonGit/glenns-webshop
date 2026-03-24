@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function MainNavigation() {
   const menu = [
     { title: "Home", href: "/" },
-    { title: "Cart", href: "/" },
+    { title: "Cart", href: "/cart" },
     { title: "About", href: "/" },
   ];
   return (
