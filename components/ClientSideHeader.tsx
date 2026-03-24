@@ -13,24 +13,24 @@ export default function Header() {
         
       </div>
 
-      <div className="w-full bg-gray-800 flex p-2 pl-40 pr-40">
-          <ul className="flex flex-row w-full justify-between p-2 text-white text-xs font-semibold">
-            <li>
+      <div className="w-full bg-gray-800 flex pl-40 pr-40">
+          <ul className="flex flex-row w-full justify-around text-center text-white text-xs font-semibold">
+            <li className="w-full h-full hover:bg-[#1a1a1d] p-4 cursor-pointer">
               Tanks
             </li>
-            <li>
+            <li className="w-full h-full hover:bg-[#1a1a1d] p-4 cursor-pointer">
               Sprängämnen
             </li>
-            <li>
+            <li className="w-full h-full hover:bg-[#1a1a1d] p-4 cursor-pointer">
               Atombomber
             </li>
-            <li>
+            <li className="w-full h-full hover:bg-[#1a1a1d]  p-4 cursor-pointer">
               Scudmissiler
             </li>
-            <li>
+            <li className="w-full h-full hover:bg-[#1a1a1d]  p-4 cursor-pointer">
               Stridsflyg
             </li>
-            <li>
+            <li className="w-full h-full hover:bg-[#1a1a1d]  p-4 cursor-pointer">
               Minröjare
             </li>
           </ul>
