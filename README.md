@@ -8,7 +8,7 @@ All utveckling sker i feature-branches och pushas tillsammans in i dev för geme
 Userstories och tasks skrivs in och följs upp i [GitHub Projects](https://github.com/users/pontusOlssonGit/projects/5)  
 Fokus på leveransen med återkommande möten 2-3ggr i veckan.   
 
-## 🛣️ Tänkte väg framåt
+## 🛣️ Tänkt väg framåt
 - [x] 🤝 Projektkickoff: Bestämma arbetssätt, scope och gemensam målbild
 - [x] 👥 Roadmap: Prioriteringar, ambitionsnivå
 - [x] ⚙️ Initiering: Skapa projekt, repo och kanban. Userstories och tasks förbereds
