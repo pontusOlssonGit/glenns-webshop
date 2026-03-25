@@ -27,7 +27,6 @@ export default function Search2({ products = [] }: Props) {
                r.rating.toString().includes(lower)) ?? false)
       );
     });
-
     setResults(result);
   };
 
