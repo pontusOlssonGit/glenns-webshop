@@ -1,3 +1,4 @@
+import ProductGrid from "@/components/product-grid";
 import Search2 from "@/components/search2";
 import { ProductsResponse } from "@/types/types";
 
@@ -7,11 +8,9 @@ const products = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://local
   
   return (
     <>
-      <main className="w-full pl-70 pt-70 pb-15 bg-gray-50">
-        <Search2 products={products}/>
-        <div>
-        </div>
-      </main>
+      <Search2 products={products.products} />
+        <ProductGrid products={products.products} />
+   
     </>
   );
 }
