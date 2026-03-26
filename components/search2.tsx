@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import type { Product } from "../types/types";
 
 type Props = {
   products: Product[];
+  onSearch: (results: Product[]) => void;
 };
 
-export default function Search2({ products = [] }: Props) {
+export default function Search2({ products = [], onSearch }: Props) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<Product[]>([]);
 
   const searchProducts = (q: string) => {
     const lower = q.toLowerCase();
@@ -20,32 +20,25 @@ export default function Search2({ products = [] }: Props) {
         p.description.toLowerCase().includes(lower) ||
         (p.brand?.toLowerCase().includes(lower) ?? false) ||
         (p.category?.name?.toLowerCase().includes(lower) ?? false) ||
-	(p.rating?.toString().includes(lower) ?? false) ||
+        (p.rating?.toString().includes(lower) ?? false) ||
         p.price.toString().includes(lower) ||
-	(p.reviews?.some(r => r.comment.toLowerCase().includes(lower) ||
-               r.reviewerName.toLowerCase().includes(lower) ||
-               r.rating.toString().includes(lower)) ?? false)
+        (p.reviews?.some(r =>
+          r.comment.toLowerCase().includes(lower) ||
+          r.reviewerName.toLowerCase().includes(lower) ||
+          r.rating.toString().includes(lower)
+        ) ?? false)
       );
     });
-    setResults(result);
+    
+    onSearch(result, q);
+  
   };
 
   return (
-    <>
-      <input type="text" placeholder="Search2..." value={query} onChange={(e) => {
-          setQuery(e.target.value);
-          searchProducts(e.target.value);
-        }}
-      />
-
-      <h1>Results: {results.length}</h1>
-
-      {results.map((p) => (
-        <div key={p.id}>
-          <h2>{p.title}</h2>
-          <p>{p.price}</p>
-        </div>
-      ))}
-    </>
+  <input className="w-full max-w-md px-4 py-2 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" placeholder="Search..." value={query} onChange={(e) => {
+        const value = e.target.value;
+        setQuery(value);
+        searchProducts(value);
+      }}/>
   );
 }
