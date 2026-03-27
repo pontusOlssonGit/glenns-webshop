@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import Sidebar from "@/components/Sidebar";
+import { Source_Sans_3, } from "next/font/google";
+import Header from "@/components/ClientSideHeader";
 
-const inter = Inter({
+const sourceSansPro = Source_Sans_3({
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Webbutik Admin",
-  description: "Admin panel for Webbutik",
+  title: "Glenn's Webbutik",
+  description: "Webbutik",
 };
 
 export default function RootLayout({
@@ -20,8 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div>{children}</div>
+      <body className={`${sourceSansPro.className} bg-gray-100 text-gray-900`}>
+        <Header />
+        <div className="pr-40 pl-40">{children}</div>
       </body>
     </html>
   );
