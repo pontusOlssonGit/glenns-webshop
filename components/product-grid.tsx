@@ -32,9 +32,9 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
             <div className="flex items-center justify-between w-full">
               <ProductRating productRating={product.rating} />
               <span className="text-xs flex gap-1 items-center">
-                Webblager {product.availabilityStatus === "In Stock" ? (
+                Webblager {product.availabilityStatus === "In Stock" || product.availabilityStatus === "I lager" ? (
                  <Check className="w-4 h-4 text-green-900" />
-                ) : product.availabilityStatus === "Low Stock" ? (
+                ) : product.availabilityStatus === "Low Stock " || product.availabilityStatus === "Låg lager" ? (
                   <Square className="w-4 h-4 text-yellow-600" />
                 ) : (
                  <X className="w-4 h-4 text-red-600" />
