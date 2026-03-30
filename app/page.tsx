@@ -1,3 +1,10 @@
+import FooterUser from "@/components/FooterUser";
+
 export default function Home() {
-  return <div>Hello</div>;
+  return (
+    <div>
+      Hello
+      <FooterUser />
+    </div>
+  );
 }
