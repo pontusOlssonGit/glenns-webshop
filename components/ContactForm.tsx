@@ -1,4 +1,5 @@
 "use client";
+import { skrivEpost } from "@/components/skrivEpost";
 
 export default function ContactForm() {
 
@@ -8,9 +9,18 @@ export default function ContactForm() {
         }
     }
 
+    const SkickaFormular = (e: React.SubmitEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const data = new FormData(e.currentTarget);
+        if (confirm("Är du säker på att du vill skicka formuläret?")) {
+            skrivEpost(data);
+            document.querySelector("form")?.reset();
+        }
+    }
+
     return (
         <>
-            <form className="grid">
+            <form action={skrivEpost} className="grid">
                 <label htmlFor="name">Namn:</label>
                 <input type="text" id="name" name="name" placeholder="Kalle Kula" required />
 
