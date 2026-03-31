@@ -1,4 +1,4 @@
-import { ShoppingCart, ShoppingCartIcon, User2Icon } from "lucide-react";
+import { ShoppingCartIcon, User2Icon } from "lucide-react";
 import Link from "next/link";
 
 export default function MainNavigation() {

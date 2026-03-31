@@ -9,7 +9,7 @@ export default function ProductComponent({ product }: { product: Product }) {
       <h1 className="text-3xl font-extrabold mb-4">{product.title}</h1>
       <p className="text-gray-600 mb-4">{product.sku}</p>
       <ProductRating productRating={product.rating} />
-      <section className="flex flex-row justify-between items-center border-b border-gray-300">
+      <section className="flex flex-col xl:flex-row justify-between items-center border-b border-gray-300">
         <Image
           src={product.images[0]}
           alt={product.title}

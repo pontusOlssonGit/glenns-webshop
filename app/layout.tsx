@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${sourceSansPro.className} bg-gray-100 text-gray-900`}>
         <Header />
-        <div className="pr-40 pl-40">{children}</div>
+        <div className="pl-10 pr-10 lg:pl-40 lg:pr-40">{children}</div>
       </body>
     </html>
   );
