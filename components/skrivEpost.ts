@@ -8,19 +8,7 @@ export async function skrivEpost(data: FormData) {
     const formSubject = data.get("subject") as string;
     const formMessage = data.get("message") as string;
     
-    const epostMessage=  "Från: " + formNamn + " " + "Epost: " + formEmail + "<br>" + 
-                          formMessage;
-
-    // Standard exempel konfiguration för nodemailer, kan bara eposta kontot som registerats hos nodemailer
-    // const transporter = nodemailer.createTransport({
-    //     host: "smtp.resend.com",
-    //     port: 465,
-    //     secure: true,
-    //     auth: {
-    //         user: "resend",            
-    //         pass: "re_R4PMZ61Q_MSCTpZYnJNMLngnG2SDPy6NM",
-    //     },
-    // });
+    const epostMessage=  "Från: " + formNamn + " | " + "Epost: " + formEmail + "<br>" + formMessage;
 
     const transporter = nodemailer.createTransport({
     host:  process.env.SMTP_HOST,
@@ -33,7 +21,7 @@ export async function skrivEpost(data: FormData) {
 }); 
 
   const info = await transporter.sendMail({
-    from: "Kontaktformulär <typhio@msn.com>",
+    from: process.env.SMTP_USER,
     to: formEmail,
     subject: formSubject,
     html: epostMessage,
