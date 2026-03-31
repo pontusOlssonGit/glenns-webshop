@@ -2,6 +2,7 @@
 import { Box, LoaderPinwheel, Webhook } from "lucide-react";
 import Link from "next/link";
 import MainNavigation from "./MainNavigation";
+import SearchInput from "./search-input";
 
 export default function Header() {
 
@@ -26,7 +27,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex flex-1 pl-10 pr-10">
-          <input type="text" placeholder="Sök bland över 16 000 produkter" className=" placeholder:text-gray-700 bg-white flex-1 rounded-full px-4 py-3 w-80" />
+          <SearchInput />
         </div>
        
         <MainNavigation />

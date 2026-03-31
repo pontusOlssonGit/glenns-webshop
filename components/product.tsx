@@ -4,18 +4,22 @@ import ProductRating from "./product-rating";
 import { Check, Square, User2, X } from "lucide-react";
 
 export default function ProductComponent({ product }: { product: Product }) {
+  console.log(product);
+  
   return (
     <main className="bg-white flex flex-col gap-4 p-20">
       <h1 className="text-3xl font-extrabold mb-4">{product.title}</h1>
       <p className="text-gray-600 mb-4">{product.sku}</p>
       <ProductRating productRating={product.rating} />
       <section className="flex flex-col xl:flex-row justify-between items-center border-b border-gray-300">
+      {product.images && product.images.length > 0 && (
         <Image
           src={product.images[0]}
           alt={product.title}
           width={500}
           height={500}
         />
+      )}
         <div className="w-full flex flex-col items-center justify-center gap-4">
           <h2 className="text-6xl font-extrabold">
             {Math.ceil(product.price)} kr
@@ -34,11 +38,11 @@ export default function ProductComponent({ product }: { product: Product }) {
           <div className="bg-gray-50 w-full rounded-lg p-2 text-left">
             <h2 className="font-extrabold">Lagerstatus</h2>
             <span className="text-sm flex gap-1 items-center">
-              {product.availabilityStatus === "In Stock" ? (
+              {product.availability_status === "I lager" ? (
                 <span className="flex items-center gap-1">
                   <Check className="w-4 h-4 text-green-900" /> I lager
                 </span>
-              ) : product.availabilityStatus === "Low Stock" ? (
+              ) : product.availability_status === "Låg lager" ? (
                 <span className="flex items-center gap-1">
                   <Square className="w-4 h-4 text-yellow-600" /> Begränsat lager
                 </span>

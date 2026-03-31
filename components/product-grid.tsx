@@ -6,6 +6,8 @@ import Link from "next/link";
 import ProductRating from "./product-rating";
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
+  console.log(products);
+  
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
@@ -32,9 +34,9 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
             <div className="flex items-center justify-between w-full">
               <ProductRating productRating={product.rating} />
               <span className="text-xs flex gap-1 items-center">
-                Webblager {product.availabilityStatus === "In Stock" || product.availabilityStatus === "I lager" ? (
+                Webblager {product.availability_status === "In Stock" || product.availability_status === "I lager" ? (
                  <Check className="w-4 h-4 text-green-900" />
-                ) : product.availabilityStatus === "Low Stock " || product.availabilityStatus === "Låg lager" ? (
+                ) : product.availability_status === "Low Stock " || product.availability_status === "Låg lager" ? (
                   <Square className="w-4 h-4 text-yellow-600" />
                 ) : (
                  <X className="w-4 h-4 text-red-600" />
