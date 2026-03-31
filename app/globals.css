@@ -1,4 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+}
 
 /* =========================  
    Modern CSS Reset
@@ -90,7 +95,7 @@ select {
   font: inherit;
 }
 
-/* 6. Remove default button styling */ 
+/* 6. Remove default button styling */
 button {
   cursor: pointer;
 }

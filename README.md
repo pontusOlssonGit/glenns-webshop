@@ -1,105 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Lexicon grupp projekt - Glennhallen
+Ett fyra veckors slutprojekt som del i intensiv utbildningen [Lexicon Frontend development](https://github.com/Lexicon-Utbildning-Front-end-2025-2026).   
+Uppgiften att fortsätta med en tidigare övning och nu skapa en kundvänlig webbshop. Uppdrag, krav och det agila arbetssättet finns beskrivet i [instruktionsdokumentet](https://github.com/Lexicon-Utbildning-Front-end-2025-2026/projekt-grupparbete)
 
-This project uses [json-server](https://github.com/typicode/json-server/tree/v0.17.4) to mock a backend API.
+## 🌱 Uppstart
+Gruppen valde ut lämpligt projekt att forka för att snabbt komma igång och leverera grundförutsättningarna.   
+All utveckling sker i feature-branches och pushas tillsammans in i dev för gemensam hantering av eventuella konflikter och kod-återkoppling.   
+Userstories och tasks skrivs in och följs upp i [GitHub Projects](https://github.com/users/pontusOlssonGit/projects/5)  
+Fokus på leveransen med återkommande möten 2-3ggr i veckan.   
 
-Data in the json for the server is from [dummyjson.com](https://dummyjson.com/docs/products) but modified to fit the needs of this project. Most of the endpoints mirrors those in that documentation.
+## 🛣️ Tänkt väg framåt
+- [x] 🤝 Projektkickoff: Bestämma arbetssätt, scope och gemensam målbild
+- [x] 👥 Roadmap: Prioriteringar, ambitionsnivå
+- [x] ⚙️ Initiering: Skapa projekt, repo och kanban. Userstories och tasks förbereds
+- [ ] 🏃 Sprint 1: Uppfylla grundkraven för projektet såsom beskrivts
+- [ ] 🔁 Backlog refinements: Genomgång av backlog och justering av uppgifter
+- [ ] ⏫ Levelup: Välja ut passande delar för vidare utveckling av applikationen
+- [ ] 🏃 Sprint 2
+- [ ] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
+- [ ] 🏃 Sprint XX
+- [ ] 🔁 Backlog refinements XX: Genomgång av backlog och justering av uppgifter
+- [ ] 📊 Stakeholders: Demo och presentation
+- [ ] 🏁 Retrospective & utvärdering
 
-## Getting Started
-
-First, install the dependencies:
-
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
-```
-
-To start the full development environment (Next.js frontend + JSON Server backend), use:
-
-```bash
-npm run dev:full
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-The JSON server is running on [http://localhost:4000](http://localhost:4000). Here you can see the API endpoints and test them.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## JSON Server Setup
-
-This project uses [json-server](https://github.com/typicode/json-server/tree/v0.17.4) to mock a backend API.
-
-### Configuration
-
-The server configuration files are located in the `server/` directory:
-
--   `server/products.json`: The database file containing the product data.
--   `server/middleware.js`: Custom middleware for the server.
-
-### Scripts
-
-The following scripts are available in `package.json`:
-
--   `npm run mock-server`: Starts the json-server on port 4000.
--   `npm run dev:full`: Runs both the Next.js development server and the json-server concurrently.
-
-## API Endpoints
-
-The mock server (running on port 4000) provides the following endpoints:
-
-### Resources
-- `GET /products`: Get all products
-- `GET /products/:id`: Get a single product by ID
-- `GET /categories`: Get all categories
-- `GET /categories/:id`: Get a category by ID
-- `GET /categories?slug=:slug`: Get a category by slug
-
-### Create Product
-- `POST /products`: Create a new product
-
-**Required Fields:**
-- `title`: String
-- `price`: Number
-- `description`: String
-- `thumbnail`: URL String
-- `categoryId`: Number (ID of an existing category)
-- `brand`: String
-
-**Auto-generated Fields:**
-- `id`: Sequential ID
-- `sku`: Generated SKU (format: CAT-BRA-TIT-ID)
-- `meta`: Creation and update timestamps
-
-### Pagination & Sorting (json-server 0.17.4)
-See [json-server documentation](https://github.com/typicode/json-server/tree/v0.17.4) for more information.
-
-#### Pagination
-Use `_page` and `_limit` to paginate data:
-- `GET /products?_page=1&_limit=10` (First page, 10 items)
-- `GET /products?_page=2&_limit=10` (Second page, 10 items)
-
-The response will include the `Link` header with `first`, `prev`, `next`, and `last` links.
-Our custom middleware also adds `X-Total-Count` header and wraps the response to include pagination metadata (total, limit, page, pages).
-
-#### Sorting
-Use `_sort` and `_order` to sort data:
-- `GET /products?_sort=price&_order=asc` (Sort by price, ascending)
-- `GET /products?_sort=price&_order=desc` (Sort by price, descending)
-- `GET /products?_sort=price,title&_order=desc,asc` (Sort by multiple fields)
-
-#### Filtering
-- `GET /products?price_gte=10&price_lte=50` (Price between 10 and 50)
-- `GET /products?q=mascara` (Full-text search)
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
+# 👥 Gruppmedlemmar G5
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/IlluminatorWatch">
+        <img src="https://github.com/IlluminatorWatch.png" width="60" style="border-radius:50%;" /><br/>
+        Adam
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/md1frejo">
+        <img src="https://github.com/md1frejo.png" width="60" style="border-radius:50%;" /><br/>
+        Jonas
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/pontusOlssonGit">
+        <img src="https://github.com/pontusOlssonGit.png" width="60" style="border-radius:50%;" /><br/>
+        Pontus
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Wali0023">
+        <img src="https://github.com/Wali0023.png" width="60" style="border-radius:50%;" /><br/>
+        Syed
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/fnelin">
+        <img src="https://github.com/fnelin.png" width="60" style="border-radius:50%;" /><br/>
+        Fredrik
+      </a>
+    </td>
+  </tr>
+</table>
