@@ -9,18 +9,18 @@ export default function ContactForm() {
         }
     }
 
-    const SkickaFormular = (e: React.SubmitEvent<HTMLFormElement>) => {
+    const SkickaFormular = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        const data = new FormData(e.currentTarget);
+        const data = new FormData(document.querySelector("form") as HTMLFormElement);
         if (confirm("Är du säker på att du vill skicka formuläret?")) {
             skrivEpost(data);
-            document.querySelector("form")?.reset();
         }
+        document.querySelector("form")?.reset();
     }
 
     return (
         <>
-            <form action={skrivEpost} className="grid">
+            <form className="grid">
                 <label htmlFor="name">Namn:</label>
                 <input type="text" id="name" name="name" placeholder="Kalle Kula" required />
 
@@ -40,7 +40,7 @@ export default function ContactForm() {
                 <textarea id="message" name="message" placeholder="Ditt meddelande..." required></textarea>
 
                 <section className="flex gap-4">
-                    <button type="submit">Skicka</button>
+                    <button type="button" onClick={SkickaFormular}>Skicka</button>
                     <button type="button" onClick={RensBaraOmSakerDialog}>Ångra</button>
                 </section>
 

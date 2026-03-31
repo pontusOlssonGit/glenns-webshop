@@ -33,7 +33,7 @@ export async function skrivEpost(data: FormData) {
 }); 
 
   const info = await transporter.sendMail({
-    from: "Kontaktformulär <typhio@msn.com>", //Måste sättas som en giltig epostadress.
+    from: "Kontaktformulär <typhio@msn.com>",
     to: formEmail,
     subject: formSubject,
     html: epostMessage,
