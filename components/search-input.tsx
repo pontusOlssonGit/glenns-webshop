@@ -3,7 +3,6 @@
 import { Product } from "@/types/types";
 import { Check, Square, X } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 
@@ -101,14 +100,17 @@ export default function SearchInput() {
                           {Math.ceil(product.price)} kr
                         </span>
                         <span className="text-xs flex gap-1 items-center">
-                Webblager {product.availability_status === "In Stock" || product.availability_status === "I lager" ? (
-                 <Check className="w-4 h-4 text-green-900" />
-                ) : product.availability_status === "Low Stock " || product.availability_status === "Låg lager" ? (
-                  <Square className="w-4 h-4 text-yellow-600" />
-                ) : (
-                 <X className="w-4 h-4 text-red-600" />
-                )}
-              </span>
+                          Webblager{" "}
+                          {product.availability_status === "In Stock" ||
+                          product.availability_status === "I lager" ? (
+                            <Check className="w-4 h-4 text-green-900" />
+                          ) : product.availability_status === "Low Stock " ||
+                            product.availability_status === "Låg lager" ? (
+                            <Square className="w-4 h-4 text-yellow-600" />
+                          ) : (
+                            <X className="w-4 h-4 text-red-600" />
+                          )}
+                        </span>
                       </div>
                     </div>
                   </div>

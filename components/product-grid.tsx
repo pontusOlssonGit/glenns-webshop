@@ -14,7 +14,7 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="p-4 border-b cursor-pointer flex flex-col gap-2 justify-center items-center mt-auto"
+            className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto"
           >
             <Link href={`/products/${product.id}`} className="w-full items-center justify-center flex flex-col">
             <Image

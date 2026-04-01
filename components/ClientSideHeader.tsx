@@ -26,7 +26,7 @@ export default function Header() {
           Glennhallen
           </Link>
         </div>
-        <div className="flex flex-1 pl-10 pr-10">
+        <div className="flex flex-1">
           <SearchInput />
         </div>
        
