@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+:root {
+  --color-val1: 49243E;
+  --color-val2: 704264;
+  --color-val3: BB8493;
+  --color-val4: DBAFA0;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-val1: var(color-val1);
+  --color-val2: var(color-val2);
+  --color-val3: var(color-val3);
+  --color-val4: var(color-val4);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* --tab-size-2: 2;
+  --tab-size-4: 4;
+  --tab-size-github: 8; */
+}
+
 /* =========================  
    Modern CSS Reset
    ========================= */
@@ -46,7 +71,7 @@ select {
   font: inherit;
 }
 
-/* 6. Remove default button styling */ 
+/* 6. Remove default button styling */
 button {
   cursor: pointer;
 }
