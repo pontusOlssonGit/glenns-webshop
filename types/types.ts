@@ -26,7 +26,7 @@ export interface Product {
   };
   warrantyInformation?: string;
   shippingInformation?: string;
-  availabilityStatus?: string;
+  availability_status?: string;
   reviews?: {
     rating: number;
     comment: string;

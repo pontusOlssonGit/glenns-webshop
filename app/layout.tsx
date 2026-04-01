@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Source_Sans_3, } from "next/font/google";
+import { Lexend } from "next/font/google";
 import Header from "@/components/ClientSideHeader";
 
-const sourceSansPro = Source_Sans_3({
+const lexend = Lexend({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "700"],
@@ -21,9 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sourceSansPro.className} bg-gray-100 text-gray-900`}>
+      <body className={`${lexend.className} bg-gray-100 text-gray-900`}>
         <Header />
-        <div className="pr-40 pl-40">{children}</div>
+        <div className="pl-10 pr-10 lg:pl-35 lg:pr-35">{children}</div>
       </body>
     </html>
   );
