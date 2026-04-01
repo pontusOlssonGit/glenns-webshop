@@ -16,14 +16,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${sourceSansPro.className} bg-gray-100 text-gray-900`}>
         <Header />
         <div className="pr-40 pl-40">{children}</div>
+        {modal}
       </body>
     </html>
   );
