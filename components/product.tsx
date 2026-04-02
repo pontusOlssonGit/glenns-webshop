@@ -4,7 +4,6 @@ import ProductRating from "./product-rating";
 import { Check, Square, User2, X } from "lucide-react";
 
 export default function ProductComponent({ product }: { product: Product }) {
-  console.log(product);
   
   return (
     <main className="bg-white flex flex-col gap-4 p-20">
@@ -12,9 +11,9 @@ export default function ProductComponent({ product }: { product: Product }) {
       <p className="text-gray-600 mb-4">{product.sku}</p>
       <ProductRating productRating={product.rating} />
       <section className="flex flex-col xl:flex-row justify-between items-center border-b border-gray-300">
-      {product.images && product.images.length > 0 && (
+      {product.image && (
         <Image
-          src={product.images[0]}
+          src={product.image}
           alt={product.title}
           width={500}
           height={500}
