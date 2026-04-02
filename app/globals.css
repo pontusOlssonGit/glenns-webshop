@@ -19,11 +19,6 @@
   margin: 0;
 }
 
-/* 3. Core body defaults */
-
-  -webkit-text-size-adjust: 100%;
-}
-
 body
 {
   min-height: 100vh;
