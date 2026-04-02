@@ -43,6 +43,7 @@ export interface Product {
     qrCode?: string;
   };
   images: string[];
+  image?: string;
   thumbnail: string;
 }
 
