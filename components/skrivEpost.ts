@@ -8,7 +8,7 @@ export async function skrivEpost(data: FormData) {
     const formSubject = data.get("subject") as string;
     const formMessage = data.get("message") as string;
     
-    const epostMessage=  "Från: " + formNamn + " | " + "Epost: " + formEmail + "<br>" + formMessage;
+    const epostMessage=  "<b>Från:</b> " + formNamn + " | " + "<b>Epost:</b> " + formEmail + + "<br> <b>Gällande:</b> " + formSubject + "<br>" + formMessage;
 
     const transporter = nodemailer.createTransport({
     host:  process.env.SMTP_HOST,

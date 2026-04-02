@@ -30,14 +30,17 @@ export default function Header() {
 
       <div className="w-full bg-[#333] flex pl-40 pr-40">
         <ul className="flex flex-row w-full justify-around text-center text-white text-xs font-semibold">
-          <li><Link href="/contact/" className="w-full hover:bg-[#1a1a1d] p-2 cursor-pointer">
-            Kontakt
-          </Link></li>
+
           {categories.map((category) => (
             <li key={category} className="w-full hover:bg-[#1a1a1d] p-2 cursor-pointer">
               {category}
             </li>
           ))}
+          <li key="contact" className="w-full hover:bg-[#1a1a1d] p-2 cursor-pointer">
+            <Link href="/contact/">
+              Kontakt
+            </Link>
+          </li>
         </ul>
       </div>
 
