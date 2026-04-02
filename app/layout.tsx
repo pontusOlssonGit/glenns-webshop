@@ -16,14 +16,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${lexend.className} bg-gray-100 text-gray-900`}>
         <Header />
         <div className="pl-10 pr-10 lg:pl-35 lg:pr-35">{children}</div>
+        {modal}
       </body>
     </html>
   );

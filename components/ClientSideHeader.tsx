@@ -31,7 +31,7 @@ export default function Header() {
         </div>
        
         <MainNavigation />
-        
+
       </div>
       <div className="p-0.5 rounded-lg bg-linear-to-r from-blue-500 to-purple-500 animate-pulse [animation-duration:8s]">
       </div>
@@ -43,6 +43,11 @@ export default function Header() {
                 {category}
               </li>
             ))}
+            <li key="contact" className="w-full hover:bg-[#1a1a1d] p-2 cursor-pointer">
+            <Link href="/contact/">
+             Kontakt
+            </Link>
+          </li>
           </ul>
       </div>
 
