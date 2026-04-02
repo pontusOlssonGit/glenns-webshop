@@ -67,6 +67,11 @@ export default function SearchInput() {
           className=" placeholder:text-gray-700 bg-white w-full z-20 rounded-full px-4 py-3 focus:outline-none focus:shadow-md focus:shadow-gray-400"
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => searchTerm.length >= 2 && setIsOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              router.push(`?q=${encodeURIComponent(e.currentTarget.value)}`);
+            }
+          }}
         />
         {isOpen && (
           <div ref={dropdownRef}>
@@ -102,7 +107,7 @@ export default function SearchInput() {
                         <span className="text-xs flex gap-1 items-center">
                           Webblager{" "}
                           {product.availability_status === "In Stock" ||
-                          product.availability_status === "I lager" ? (
+                            product.availability_status === "I lager" ? (
                             <Check className="w-4 h-4 text-green-900" />
                           ) : product.availability_status === "Low Stock " ||
                             product.availability_status === "Låg lager" ? (
