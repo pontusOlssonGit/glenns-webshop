@@ -12,9 +12,12 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
 - [x] 🤝 Projektkickoff: Bestämma arbetssätt, scope och gemensam målbild
 - [x] 👥 Roadmap: Prioriteringar, ambitionsnivå
 - [x] ⚙️ Initiering: Skapa projekt, repo och kanban. Userstories och tasks förbereds
-- [ ] 🏃 Sprint 1: Uppfylla grundkraven för projektet såsom beskrivts
-- [ ] 🔁 Backlog refinements: Genomgång av backlog och justering av uppgifter
-- [ ] ⏫ Levelup: Välja ut passande delar för vidare utveckling av applikationen
+- [x] 🏃 Sprint 1: Uppfylla grundkraven för projektet såsom beskrivts
+- [x] 🔁 Backlog refinements: Genomgång av backlog och justering av uppgifter
+- [x] ⏫ Levelup: Välja ut passande delar för vidare utveckling av applikationen
+  - Flytta över data till en databas istället för att arbeta med JSON filerna.
+  - Fungerande kontaktformulär
+  - Förberedelser för betalnings-, användare- och varukorgsfunktionalitet
 - [ ] 🏃 Sprint 2
 - [ ] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
 - [ ] 🏃 Sprint XX
