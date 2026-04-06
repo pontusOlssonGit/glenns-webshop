@@ -1,11 +1,12 @@
+import { signup } from "@/lib/actions/auth";
 
-import { signupAction } from "@/app/signup/actions";
+
 
 export default function Signup() {
   return (
     <div className="bg-white flex flex-col items-center justify-start p-10 min-h-screen">
       <h2 className="text-3xl">Skapa konto</h2>
-      <form action={signupAction} className="flex flex-col p-10 min-w-3xl gap-10">
+      <form action={signup} className="flex flex-col p-10 min-w-3xl gap-10">
         <input 
           name="email" 
           type="email" 
