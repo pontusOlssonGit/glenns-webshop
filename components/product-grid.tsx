@@ -15,12 +15,14 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
             key={product.id}
             className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto"
           >
-            <Link href={`/products/${product.id}`} className="w-full items-center justify-center flex flex-col">
+            <Link href={`/products/${product.id}`} prefetch={false} className="w-full items-center justify-center flex flex-col">
             <Image
               src={product.thumbnail}
               alt={product.title}
               width={200}
               height={200}
+              
+              
             />
             <h3 className="text-md font-semibold mb-2 hover:underline">
               {product.title}

@@ -15,6 +15,7 @@ export default function ProductComponent({ product }: { product: Product }) {
         <Image
           src={product.image}
           alt={product.title}
+          loading="eager"
           width={500}
           height={500}
         />
