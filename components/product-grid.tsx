@@ -6,7 +6,6 @@ import Link from "next/link";
 import ProductRating from "./product-rating";
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
-  console.log(products);
   
   return (
     <section>
