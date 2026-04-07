@@ -1,25 +1,49 @@
 import { Product, ProductsResponse } from "@/types/types";
 import { createClient } from "@/lib/supabase/server";
 import ProductGrid from "@/components/product-grid";
+import Pagination from "@/components/pagination";
 
-export default async function Home({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
-  // const products = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000"}/products`
-  // ).then(res => res.json()) as ProductsResponse;
-  const query = (await searchParams).q;
+const ITEMS_PER_PAGE = 20;
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; page?: string }>;
+}) {
+  const params = await searchParams;
+  const query = params.q;
+  const page = params.page;
+  const currentPage = Math.max(1, Number(page) || 1);
   const supabase = await createClient();
 
   let supabaseQuery = supabase
-    .from('products')
-    .select('*')
-    .limit(20);
+  .from("products")
+  .select("*",{ count: "exact" })
 
   if (query) {
-    supabaseQuery = supabaseQuery.or(`title.ilike.%${query}%,description.ilike.%${query}%`)
+    supabaseQuery = supabaseQuery.or(
+      `title.ilike.%${query}%,description.ilike.%${query}%`,
+    );
   }
 
-  const { data: products, error } = await supabaseQuery as { data: Product[], error: any };
-   
+  const from = (currentPage - 1) * ITEMS_PER_PAGE;
+  const to = from + ITEMS_PER_PAGE - 1;
 
-  return <ProductGrid products={products} />;
+  const { data: products, count, error } = await supabaseQuery
+    .range(from, to)
+    .order("created_at", { ascending: false }) as {
+    data: Product[];
+    count: number | null;
+    error: any;
+  };
+
+  const totalPages = count ? Math.ceil(count / ITEMS_PER_PAGE) : 0;
+
+  return (
+    <>
+      <ProductGrid products={products} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      
+    </>
+  );
 }
