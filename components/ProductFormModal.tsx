@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ProductFormValues } from "../lib/productsApi";
-import { Category } from "../types";
+import { Category } from "@/types/types";
 
 type ProductFormModalProps = {
   mode: "create" | "edit";
@@ -23,20 +23,26 @@ export default function ProductFormModal({
   onClose,
   onSubmit,
 }: Readonly<ProductFormModalProps>) {
-  const [formValues, setFormValues] = useState<ProductFormValues>(initialValues);
+  const [formValues, setFormValues] =
+    useState<ProductFormValues>(initialValues);
 
   useEffect(() => {
     setFormValues(initialValues);
   }, [initialValues]);
 
   function handleChange(
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) {
     const { name, value } = event.target;
 
     setFormValues((previousValues) => ({
       ...previousValues,
-      [name]: name === "price" || name === "stock" || name === "categoryId" ? Number(value) : value,
+      [name]:
+        name === "price" || name === "stock" || name === "categoryId"
+          ? Number(value)
+          : value,
     }));
   }
 
@@ -155,7 +161,9 @@ export default function ProductFormModal({
             />
           </label>
 
-          {errorMessage ? <p className="text-sm text-red-600">{errorMessage}</p> : null}
+          {errorMessage ? (
+            <p className="text-sm text-red-600">{errorMessage}</p>
+          ) : null}
 
           <div className="flex justify-end gap-2 pt-2">
             <button
