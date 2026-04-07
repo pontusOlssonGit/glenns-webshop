@@ -11682,9 +11682,9 @@
     },
     {
       "id": 193,
-      "title": "Titta på Gold for Women",
-      "description": "Gold Women's Watch är en fantastisk accessoar som kombinerar lyx och stil. Med ett guldpläterat fodral och en chic design, ger den en touch av glamour till vilken outfit som helst.",
-      "price": 799.99,
+      "title": "T34 stridsvagn",
+      "description": "sovjetisk stridsvagn från andravärldskriget",
+      "price": 10000,
       "discountPercentage": 18.34,
       "rating": 4.24,
       "stock": 0,
@@ -11952,3 +11952,4 @@
     }
   ]
 }
+

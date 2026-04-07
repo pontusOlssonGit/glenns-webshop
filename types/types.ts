@@ -26,7 +26,7 @@ export interface Product {
   };
   warrantyInformation?: string;
   shippingInformation?: string;
-  availabilityStatus?: string;
+  availability_status?: string;
   reviews?: {
     rating: number;
     comment: string;
@@ -43,6 +43,7 @@ export interface Product {
     qrCode?: string;
   };
   images: string[];
+  image?: string;
   thumbnail: string;
 }
 
@@ -52,4 +53,12 @@ export interface ProductsResponse {
   limit: number;
   page: number;
   pages: number;
+}
+
+import { LucideIcon } from 'lucide-react';
+export interface MenuItem {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+  color: 'purple' | 'blue' | 'green' | 'yellow' | 'red';
 }

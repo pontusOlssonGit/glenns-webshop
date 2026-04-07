@@ -1,24 +1,49 @@
-import type { ProductsResponse } from "./types";
+import { Product, ProductsResponse } from "@/types/types";
+import { createClient } from "@/lib/supabase/server";
+import ProductGrid from "@/components/product-grid";
+import Pagination from "@/components/pagination";
 
-const API_URL = "http://localhost:4000";
-const defaultLimit = "6";
+const ITEMS_PER_PAGE = 20;
 
-export default async function Home() {
-  // we use the fetch() method to get the products from the API
-  // in this fetch we sort using _sort and _order and we limit the number of products using _limit
-  // we also use _expand to get the relational category data
-  // we can use the other destructed variables like page, total and so on to create pagination or show info
-  const { products, total, page, pages, limit }: ProductsResponse = await fetch(
-    `${API_URL}/products/?_limit=${defaultLimit}&_sort=id&_order=desc&_expand=category`,
-  ).then((res) => res.json());
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; page?: string }>;
+}) {
+  const params = await searchParams;
+  const query = params.q;
+  const page = params.page;
+  const currentPage = Math.max(1, Number(page) || 1);
+  const supabase = await createClient();
 
+  let supabaseQuery = supabase
+  .from("products")
+  .select("*",{ count: "exact" })
 
-console.log(products);
+  if (query) {
+    supabaseQuery = supabaseQuery.or(
+      `title.ilike.%${query}%,description.ilike.%${query}%`,
+    );
+  }
+
+  const from = (currentPage - 1) * ITEMS_PER_PAGE;
+  const to = from + ITEMS_PER_PAGE - 1;
+
+  const { data: products, count, error } = await supabaseQuery
+    .range(from, to)
+    .order("created_at", { ascending: false }) as {
+    data: Product[];
+    count: number | null;
+    error: any;
+  };
+
+  const totalPages = count ? Math.ceil(count / ITEMS_PER_PAGE) : 0;
 
   return (
-    <main>
-      <h1>Products</h1>
-      <div>{products.map((product) => <h2 key={product.id}>{product.title} - {product.category?.name}</h2>)}</div>
-    </main>
+    <>
+      <ProductGrid products={products} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      
+    </>
   );
 }
