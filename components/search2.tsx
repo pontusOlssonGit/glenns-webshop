@@ -30,7 +30,7 @@ export default function Search2({ products = [], onSearch }: Props) {
       );
     });
     
-    onSearch(result,q);
+    onSearch(result);
   
   };
 

@@ -15,8 +15,8 @@ export default function ProductsPageClient({ products }: { products: Product[] }
   useEffect(() => {
     const fetchProducts = async () => {
       const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_KEY
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_KEY!
       );
 
       const { data, error } = await supabase
@@ -28,7 +28,7 @@ export default function ProductsPageClient({ products }: { products: Product[] }
       console.log("ERROR:", error);
 
       if (!error && data) {
-        setProducts(data);
+        setFilteredProducts(data);
         setFilteredProducts(data);
       }
     };
@@ -40,8 +40,7 @@ export default function ProductsPageClient({ products }: { products: Product[] }
     <>
       <Search2
         products={products}
-        onSearch={(results, q) => {
-          setQuery(q);
+        onSearch={(results) => {
           setFilteredProducts(results);
         }}
       />
