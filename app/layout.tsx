@@ -3,6 +3,7 @@ import "./globals.css";
 import { Lexend } from "next/font/google";
 import Header from "@/components/ClientSideHeader";
 import { createClient } from "@/lib/supabase/server";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default async function RootLayout({
         <Header user={user} />
         <div className="pl-10 pr-10 lg:pl-35 lg:pr-35">{children}</div>
         {modal}
+        <SpeedInsights />
 
       </body>
     </html>
