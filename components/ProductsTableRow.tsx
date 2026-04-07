@@ -2,7 +2,7 @@ import {
   SquarePen,
   Trash2,
 } from "lucide-react";
-import { ProductsResponse } from "../types";
+import { ProductsResponse } from "@/types/types";
 
 function formatPrice(value: number) {
   return Math.trunc(Number(value)).toLocaleString("sv-SE");
@@ -66,7 +66,7 @@ export default function ProductsTableRow({
             <td
             className={`px-3 py-2 align-middle text-center ${stockStatusClass}`}
             >
-                {product.availabilityStatus}
+                {product.availability_status}
             </td>
             <td className="px-3 py-2 align-middle overflow-hidden text-right flex gap-1">
             <button
