@@ -1,10 +1,12 @@
 import { Product } from "@/types/types";
 import { Trash2 } from "lucide-react";
+import { useCartStore } from "./Store";
 function formatPrice(value: number) {
   return Math.trunc(Number(value)).toLocaleString("sv-SE");
 }
 
 export default function CartTableRow({ product }: { product: Product }) {
+  const deleteProductInCart = useCartStore((state) => state.deleteProduct);
   return (
     <tr className="hover:bg-gray-100">
       <td className="px-3 py-2 w-auto h-10 align-middle aspect-square">
@@ -36,6 +38,7 @@ export default function CartTableRow({ product }: { product: Product }) {
       </td>
       <td className="px-3 py-2 align-middle overflow-hidden text-right flex gap-1">
         <button
+          onClick={() => deleteProductInCart(product)}
           type="button"
           className="text-red-600 bg-red-200 p-1 rounded-md hover:bg-red-700 hover:text-white"
         >
