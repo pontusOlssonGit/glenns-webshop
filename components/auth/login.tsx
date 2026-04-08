@@ -5,11 +5,11 @@ export default function Login() {
 
 
   return (
-    <div className="bg-white flex flex-col items-center justify-start p-10 min-h-screen">
+    <div className="bg-white flex flex-col items-center justify-start p-10">
       <h2 className="text-3xl">Logga in</h2>
       <form
         action={login}
-        className="flex flex-col p-10 min-w-3xl gap-10"
+        className="flex flex-col p-10 gap-10"
       >
         <input
           name="email"

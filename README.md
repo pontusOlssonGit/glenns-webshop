@@ -18,8 +18,12 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
   - Flytta över data till en databas istället för att arbeta med JSON filerna.
   - Fungerande kontaktformulär
   - Förberedelser för betalnings-, användare- och varukorgsfunktionalitet
-- [ ] 🏃 Sprint 2
-- [ ] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
+- [x] 🏃 Sprint 2
+- [x] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
+  - Enklare paginering
+  - Koppla sök till produktgrid
+  - Fungerande varukorg
+  - Logga in / Skapa konto
 - [ ] 🏃 Sprint XX
 - [ ] 🔁 Backlog refinements XX: Genomgång av backlog och justering av uppgifter
 - [ ] 📊 Stakeholders: Demo och presentation
