@@ -69,7 +69,7 @@ export default function SearchInput() {
           onFocus={() => searchTerm.length >= 2 && setIsOpen(true)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              router.push(`?q=${encodeURIComponent(e.currentTarget.value)}`);
+              router.push(`/?q=${encodeURIComponent(e.currentTarget.value)}`);
             }
           }}
         />
