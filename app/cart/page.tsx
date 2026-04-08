@@ -1,10 +1,10 @@
 "use client";
 import CartTableRow from "@/components/CartTableRow";
-import { Product } from "@/types/types";
+import { CartItem, Product } from "@/types/types";
 import { useCartStore } from "@/components/Store";
 
 export default function Cart() {
-  const productsInCart = useCartStore((state) => state.products);
+  const productsInCart = useCartStore((state) => state.cartItems);
 
   return (
     <div className="pt-15 mx-auto! bg-white">
@@ -23,8 +23,11 @@ export default function Cart() {
         </thead>
         <tbody>
           {productsInCart.length > 0 ? (
-            productsInCart.map((product: Product) => (
-              <CartTableRow key={product.id} product={product} />
+            productsInCart.map((cartItem: CartItem) => (
+              <CartTableRow
+                key={cartItem.product.id}
+                product={cartItem.product}
+              />
             ))
           ) : (
             <tr>

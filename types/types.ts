@@ -55,10 +55,14 @@ export interface ProductsResponse {
   pages: number;
 }
 
-import { LucideIcon } from 'lucide-react';
+import { LucideIcon } from "lucide-react";
 export interface MenuItem {
   href: string;
   label: string;
   icon: LucideIcon;
-  color: 'purple' | 'blue' | 'green' | 'yellow' | 'red';
+  color: "purple" | "blue" | "green" | "yellow" | "red";
+}
+export interface CartItem {
+  product: Product;
+  quantity: number;
 }
