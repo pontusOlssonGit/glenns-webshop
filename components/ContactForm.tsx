@@ -24,15 +24,15 @@ export default function ContactForm() {
 
     return (
         <>
-            <div className="flex justify-center py-4 px-4">
-                <div className="w-full max-w-lg bg-background border border-val3/20 rounded-2xl p-10">
+            <div className="flex justify-center">
+                <div className="w-full max-w-lg border border-val3/20 rounded-2xl p-10">
 
                     {/* Header */}
                     <div className="mb-8">
-                        <h2 className="text-xl font-medium text-val1 tracking-wide" style={{ fontFamily: 'Georgia, serif' }}>
+                        <h2 className="text-xl font-medium text-gray-700 tracking-wide" >
                             Kontakta Glenn
                         </h2>
-                        <p className="text-xs text-val3 mt-1">Vi återkopplar inom ett par arbetsdagar.</p>
+                        <p className="text-xs text-gray-500 mt-1">Vi återkopplar inom ett par arbetsdagar.</p>
                         <br />
                     </div>
 
@@ -45,7 +45,7 @@ export default function ContactForm() {
                             <input
                                 type="text" id="name" name="name"
                                 placeholder="Kalle Kula" required
-                                className="px-3.5 py-2.5 text-sm rounded-lg border border-val3/40 bg-val4/10 text-val1 placeholder:text-val3/60 focus:outline-none focus:border-val3 focus:ring-2 focus:ring-val3/20 focus:bg-white transition-all duration-200" />
+                                className="px-3.5 py-2.5 text-sm rounded-lg border border-val3/40 bg-gray-50 text-gray-500 placeholder:text-val3/60 focus:outline-none focus:border-val3 focus:ring-2 focus:ring-val3/20 focus:bg-white transition-all duration-200" />
                         </div>
 
                         <div className="flex flex-col gap-1.5">
@@ -55,7 +55,7 @@ export default function ContactForm() {
                             <input
                                 type="email" id="email" name="email"
                                 placeholder="kalle.kula@exempel.se" required
-                                className="px-3.5 py-2.5 text-sm rounded-lg border border-val3/40 bg-val4/10 text-val1 placeholder:text-val3/60 focus:outline-none focus:border-val3 focus:ring-2 focus:ring-val3/20 focus:bg-white transition-all duration-200" />
+                                className="px-3.5 py-2.5 text-sm rounded-lg border border-gray-300 bg-gray-50 text-gray-500 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:bg-white transition-all duration-200" />
                         </div>
 
                         <div className="flex flex-col gap-1.5">
@@ -64,8 +64,8 @@ export default function ContactForm() {
                             </label>
                             <select
                                 id="subject" name="subject" defaultValue="startvarde" required
-                                className="px-3.5 py-2.5 text-sm rounded-lg border border-val3/40 bg-val4/10 text-val1 appearance-none focus:outline-none focus:border-val3 focus:ring-2 focus:ring-val3/20 focus:bg-white transition-all duration-200">
-                                <option value="startvarde" disabled className="text-val3">Välj ett alternativ...</option>
+                                className="px-3.5 py-2.5 text-sm rounded-lg border border-gray-300 bg-gray-50 text-gray-500 appearance-none focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:bg-white transition-all duration-200">
+                                <option value="startvarde" disabled className="text-gray-400">Välj ett alternativ...</option>
                                 <option value="produkt">Produkt</option>
                                 <option value="feedback">Order</option>
                                 <option value="betalning">Betalning / Faktura</option>
@@ -74,25 +74,25 @@ export default function ContactForm() {
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                            <label htmlFor="message" className="text-xs font-medium uppercase tracking-widest text-val2">
+                            <label htmlFor="message" className="text-xs font-medium uppercase tracking-widest text-gray-500">
                                 Meddelande
                             </label>
                             <textarea
                                 id="message" name="message"
                                 placeholder="Ditt meddelande..." required
                                 rows={4}
-                                className="px-3.5 py-2.5 text-sm rounded-lg border border-val3/40 bg-val4/10 text-val1 placeholder:text-val3/60 resize-y focus:outline-none focus:border-val3 focus:ring-2 focus:ring-val3/20 focus:bg-white transition-all duration-200" />
+                                className="px-3.5 py-2.5 text-sm rounded-lg border border-gray-300 bg-gray-50 text-gray-500 placeholder:text-gray-400 resize-y focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:bg-white transition-all duration-200" />
                         </div>
 
                         <div className="flex gap-3 mt-1">
                             <button
                                 type="button" onClick={SkickaFormular}
-                                className="flex-1 py-2.5 px-5 rounded-lg bg-val2 text-val4/90 text-sm font-medium hover:bg-val1 transition-colors duration-200">
+                                className="flex-1 py-2.5 px-5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
                                 Skicka
                             </button>
                             <button
                                 type="button" onClick={RensBaraOmSakerDialog}
-                                className="py-2.5 px-5 rounded-lg border border-val3/50 text-val3 text-sm hover:bg-val4/20 hover:text-val2 hover:border-val2 transition-all duration-200">
+                                className="py-2.5 px-5 rounded-lg border border-gray-400 text-gray-500 text-sm hover:bg-blue-700 hover:text-white hover:border-val2 transition-all duration-200">
                                 Ångra
                             </button>
                         </div>

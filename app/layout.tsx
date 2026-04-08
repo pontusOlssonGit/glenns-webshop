@@ -5,6 +5,7 @@ import Header from "@/components/ClientSideHeader";
 import { createClient } from "@/lib/supabase/server";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/next';
+import FooterUser from "@/components/FooterUser";
 
 
 const lexend = Lexend({
@@ -40,7 +41,7 @@ export default async function RootLayout({
         {modal}
         <SpeedInsights />
         <Analytics />
-
+        <FooterUser/>
       </body>
     </html>
   );

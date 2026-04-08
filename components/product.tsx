@@ -101,7 +101,7 @@ export default function ProductComponent({ product }: { product: Product }) {
                       <User2 className="w-6 h-6 text-white" />
                     </span>
                     <div>
-                      <span className="font-semibold">{review.reviewerName}</span>
+                      <span className="font-semibold">{review.reviewer_name}</span>
                       <ProductRating productRating={review.rating} />
                     </div>
                     </div>
