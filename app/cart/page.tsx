@@ -1,16 +1,17 @@
+"use client";
 import CartTableRow from "@/components/CartTableRow";
-import { ProductsResponse, Product } from "@/types/types";
+import { Product } from "@/types/types";
+import { useCounterStore } from "@/components/Store";
 
-export default async function Cart() {
-  const API_URL = "http://localhost:4000";
-  const defaultLimit = 4;
+export default function Cart() {
+  const productsInCart = useCounterStore((state) => state.products);
 
-  const { products }: ProductsResponse = await fetch(
-    `${API_URL}/products/?_limit=${defaultLimit}&_sort=id&_order=asce`,
-  ).then((res) => res.json());
   return (
     <div className="pt-15 mx-auto! bg-white">
-      <h1 className="text-4xl text-center ">Your Cart (4 items)</h1>
+      <h1 className="text-4xl text-center ">
+        Your Cart ({productsInCart.length} items)
+      </h1>
+      {/* <CartIdTest /> */}
       <table className="w-full mt-10!">
         <thead>
           <tr>
@@ -22,9 +23,17 @@ export default async function Cart() {
           </tr>
         </thead>
         <tbody>
-          {(products || []).map((product: Product) => (
-            <CartTableRow key={product.id} product={product} />
-          ))}
+          {productsInCart.length > 0 ? (
+            productsInCart.map((product: Product) => (
+              <CartTableRow key={product.id} product={product} />
+            ))
+          ) : (
+            <tr>
+              <td colSpan={5} className="text-center py-10 text-gray-500">
+                Your cart is empty.
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
