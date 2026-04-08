@@ -6,7 +6,16 @@ function formatPrice(value: number) {
 }
 
 export default function CartTableRow({ product }: { product: Product }) {
+  const cartItems = useCartStore((state) => state.cartItems);
   const deleteProductInCart = useCartStore((state) => state.deleteProduct);
+  const incrementProductQuantity = useCartStore(
+    (state) => state.incrementQuantity,
+  );
+  const decrementProductQuantity = useCartStore(
+    (state) => state.decrementQuantity,
+  );
+  const cartItem = cartItems.find((c) => c.product.id == product.id);
+  const cartItemQuantity = cartItem?.quantity;
   return (
     <tr className="hover:bg-gray-100">
       <td className="px-3 py-2 w-auto h-10 align-middle aspect-square">
@@ -32,9 +41,23 @@ export default function CartTableRow({ product }: { product: Product }) {
       <td className="px-3 py-2 align-middle text-right whitespace-nowrap">
         {formatPrice(product.price)} kr
       </td>
-      <td className="px-3 py-2 align-middle text-center">1</td>
       <td className="px-3 py-2 align-middle text-center">
-        {formatPrice(product.price)} kr
+        {cartItem && (
+          <>
+            <button onClick={() => decrementProductQuantity(cartItem)}>
+              -
+            </button>
+            {cartItemQuantity}
+            <button onClick={() => incrementProductQuantity(cartItem)}>
+              +
+            </button>
+          </>
+        )}
+      </td>
+      <td className="px-3 py-2 align-middle text-center">
+        {cartItemQuantity && (
+          <>{formatPrice(product.price * cartItemQuantity)} kr</>
+        )}
       </td>
       <td className="px-3 py-2 align-middle overflow-hidden text-right flex gap-1">
         <button
