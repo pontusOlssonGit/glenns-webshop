@@ -108,7 +108,7 @@ export default function ProductComponent({ product }: { product: Product }) {
                     <span className="text-sm text-gray-500 w-30" >{new Date(review.date).toLocaleDateString()}</span>
                   </div>
 
-                  {review.comment}
+                  <span className="text-sm">{review.comment}</span>
                 </li>
               ))}
             </ul>

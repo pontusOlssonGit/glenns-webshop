@@ -1,20 +1,20 @@
 "use client";
-import { Box } from "lucide-react";
+import { Apple, Box, CarFront, Cat, CookingPot, Footprints, Ham, LucideTv, ShirtIcon, Sofa, Volleyball } from "lucide-react";
 import Link from "next/link";
 import MainNavigation from "./MainNavigation";
 import SearchInput from "./search-input";
 
 export default function Header({ user }: { user: any }) {
   const categories = {
-    "Mat": {subcategories: ["Stridsvagnar", "Lätta stridsfordon", "Amfibiska fordon"]},
-    "Kläder": {subcategories: ["Herrskjortor", "Herr-tshirts"]},
-    "Elektronik": {subcategories: ["Tablets", "Strömbanker", "Smarta klockor", "Laddare", "Over-Ear hörlurar", "Mikrovågsugn", "Blender","Skrivare","Juicepress"]},
-    "Sport": {subcategories: ["Sportutrustning", "Fotboll", "Golf", "Baseball", "Tennis", "Volleyball"]},
-    "Skor": {subcategories: ["Idrottsskor", "Sportskor","Slippers"]},
-    "Kök": {subcategories: ["Bricka", "Grytor", "Tallrikar", "Stekpannor", "Sil", "Iskubsformar", "Rivhjärn", "Wok"]},
-    "Fordon": {subcategories: ["Sporthoj", "Motorcyklar","Suv"]},
-    "Djur": {subcategories: ["Hundmat", "Kattmat"]},
-    "Möbler": {subcategories: ["Soffor", "Sängar", "Sängbord"]},
+    "Mat": {subcategories: ["Frukter", "Grönsaker", "Kött", "Gryn", "Hälsokost", "Desserter","Drycker","Dryckesredskap"], icon: <Ham className="w-5 h-5 stroke-gray-900" />},
+    "Kläder": {subcategories: ["Herrskjortor", "Herr-tshirts","Klänningar"], icon: <ShirtIcon className="w-5 h-5 stroke-gray-900" />},
+    "Elektronik": {subcategories: ["Tablets", "Strömbanker", "Smarta klockor", "Laddare", "Over-Ear hörlurar", "Mikrovågsugn", "Blender","Skrivare","Juicepress"], icon: <LucideTv className="w-5 h-5 stroke-gray-900" />},
+    "Sport": {subcategories: ["Sportutrustning", "Fotboll", "Golf", "Baseball", "Tennis", "Volleyball","Cricket","Basketboll"], icon: <Volleyball className="w-5 h-7 stroke-gray-900" />},
+    "Skor": {subcategories: ["Idrottsskor", "Sportskor","Slippers"], icon: <Footprints className="w-5 h-5 stroke-gray-900" />},
+    "Kök": {subcategories: ["Bricka", "Grytor", "Tallrikar", "Stekpannor", "Sil", "Iskubsformar", "Rivjärn", "Wok"], icon: <CookingPot className="w-5 h-5 stroke-gray-900" />},
+    "Fordon": {subcategories: ["Sporthoj", "Motorcyklar","Suv"], icon: <CarFront className="w-5 h-5 stroke-gray-900" />},
+    "Djur": {subcategories: ["Hundmat", "Kattmat", "Djurtillbehör"], icon: <Cat className="w-5 h-5 stroke-gray-900" />},
+    "Möbler": {subcategories: ["Soffor", "Sängar", "Sängbord"], icon: <Sofa className="w-5 h-5 stroke-gray-900" />},
   };
   return (
     <header className="bg-[#1a1a1d] w-full">
@@ -38,23 +38,31 @@ export default function Header({ user }: { user: any }) {
           {Object.keys(categories).map((category: string) => (
             <li
               key={category}
-              className="w-full hover:bg-[#1a1a1d] p-2 cursor-pointer group"
+              className="w-full hover:bg-[#1a1a1d] p-2 group"
             >
               {category}
 
               <div className="absolute left-0 pl-5 pr-5 lg:pl-35 lg:pr-35 w-full hidden pt-2 group-hover:block">
                 <div className="bg-white flex flex-col border rounded-b-md shadow-lg overflow-hidden pt-5 pb-5">
-                  <h2 className="text-3xl text-left font-bold text-gray-900 px-4 py-2">
+                  <div className="flex flex-row items-center">
+                    {categories[category as keyof typeof categories]?.icon && (
+                      <div className="pl-10 p-2">
+                        {categories[category as keyof typeof categories]?.icon}
+                      </div>
+                    )}
+                  <h2 className="text-3xl text-left font-bold text-gray-900 py-2">
                     {category}
                   </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                   
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-left pl-10">
                   {categories[category as keyof typeof categories]?.subcategories.map((subcategory: string) => (
                     <Link
                       key={subcategory}
                       href={`/category/${subcategory.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="block px-4 py-2 hover:bg-gray-100 text-black"
+                      className="block py-2 hover:underline text-black"
                     >
-                      {subcategory}
+                      <span className="hover:underline">{subcategory}</span>
                     </Link>
                   ))}
                   </div>

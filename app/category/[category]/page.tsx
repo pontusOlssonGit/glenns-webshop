@@ -9,13 +9,14 @@ export default async function CategoryPage({ params}: { params: Promise<{ catego
 
   const { category: paramsCategory } = await params;
   
+
   
   const supabase = await createClient()
 
   const { data: products, error } = await supabase
     .from('tags')
     .select('product_id')
-    .eq('tag', paramsCategory.replace(/-/g, ' '));
+    .eq('tag', decodeURIComponent(paramsCategory.replace(/-/g, ' ')));
     
 
   if (error || !products) {
@@ -37,6 +38,8 @@ export default async function CategoryPage({ params}: { params: Promise<{ catego
   console.log(productsData.data);
   
   return (
+    <div className="min-h-full">
     <ProductGrid products={productsData.data} />
+    </div>
   )
 }
