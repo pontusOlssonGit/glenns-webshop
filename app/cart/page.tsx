@@ -1,17 +1,16 @@
 "use client";
 import CartTableRow from "@/components/CartTableRow";
 import { Product } from "@/types/types";
-import { useCounterStore } from "@/components/Store";
+import { useCartStore } from "@/components/Store";
 
 export default function Cart() {
-  const productsInCart = useCounterStore((state) => state.products);
+  const productsInCart = useCartStore((state) => state.products);
 
   return (
     <div className="pt-15 mx-auto! bg-white">
       <h1 className="text-4xl text-center ">
         Your Cart ({productsInCart.length} items)
       </h1>
-      {/* <CartIdTest /> */}
       <table className="w-full mt-10!">
         <thead>
           <tr>

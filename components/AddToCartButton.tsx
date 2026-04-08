@@ -1,9 +1,9 @@
 "use client";
 import { Product } from "@/types/types";
-import { useCounterStore } from "./Store";
+import { useCartStore } from "./Store";
 
 export default function AddToCartButton({ product }: { product: Product }) {
-  const addProductToCart = useCounterStore((state) => state.addProduct);
+  const addProductToCart = useCartStore((state) => state.addProduct);
 
   return (
     <button
