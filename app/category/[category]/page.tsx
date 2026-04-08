@@ -1,6 +1,8 @@
 import ProductComponent from "@/components/product";
 import ProductGrid from "@/components/product-grid";
 import { createClient } from "@/lib/supabase/server";
+import { Product } from "@/types/types";
+import { log } from "console";
 import { notFound } from "next/navigation";
 
 export default async function CategoryPage({ params}: { params: Promise<{ category: string }>}) {
@@ -10,27 +12,31 @@ export default async function CategoryPage({ params}: { params: Promise<{ catego
   
   const supabase = await createClient()
 
-  const { data: product, error } = await supabase
+  const { data: products, error } = await supabase
     .from('tags')
-    .select('*')
-    .eq('tag', paramsCategory.replace(/-/g, ' '))
-    .single();
+    .select('product_id')
+    .eq('tag', paramsCategory.replace(/-/g, ' '));
+    
 
-  if (error || !product) {
+  if (error || !products) {
     notFound();
   }
 
-  console.log(product);
 
-  const products = await supabase
+  const productIds = products.map((p) => p.product_id);
+  console.log("Product IDs:", productIds);
+  const productsData = await supabase
     .from('products')
     .select('*')
-    .ilike('tags', `%${paramsCategory}%`)   
-  
-  
-  
+    .in('id', productIds) as { data: Product[]; error: any };
+
+  if (productsData.error || !productsData.data) {
+    notFound();
+  }
+
+  console.log(productsData.data);
   
   return (
-    <ProductGrid products={[]} />
+    <ProductGrid products={productsData.data} />
   )
 }

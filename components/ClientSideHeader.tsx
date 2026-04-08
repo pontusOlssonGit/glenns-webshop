@@ -11,7 +11,7 @@ export default function Header({ user }: { user: any }) {
     "Elektronik": {subcategories: ["Tablets", "Strömbanker", "Smarta klockor", "Laddare", "Over-Ear hörlurar", "Mikrovågsugn", "Blender","Skrivare","Juicepress"]},
     "Sport": {subcategories: ["Sportutrustning", "Fotboll", "Golf", "Baseball", "Tennis", "Volleyball"]},
     "Skor": {subcategories: ["Idrottsskor", "Sportskor","Slippers"]},
-    "Köksredskap": {subcategories: ["Bricka", "Grytor", "Tallrikar", "Stekpannor", "Sil", "Iskubsformar", "Rivhjärn"]},
+    "Kök": {subcategories: ["Bricka", "Grytor", "Tallrikar", "Stekpannor", "Sil", "Iskubsformar", "Rivhjärn", "Wok"]},
     "Fordon": {subcategories: ["Sporthoj", "Motorcyklar","Suv"]},
     "Djur": {subcategories: ["Hundmat", "Kattmat"]},
     "Möbler": {subcategories: ["Soffor", "Sängar", "Sängbord"]},
@@ -47,7 +47,7 @@ export default function Header({ user }: { user: any }) {
                   <h2 className="text-3xl text-left font-bold text-gray-900 px-4 py-2">
                     {category}
                   </h2>
-                  <div className="flex flex-row">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {categories[category as keyof typeof categories]?.subcategories.map((subcategory: string) => (
                     <Link
                       key={subcategory}
