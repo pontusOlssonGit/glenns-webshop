@@ -7,16 +7,16 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
 type OrderRow = {
   orderId: string;
-  reviewerName: string;
-  reviewerEmail: string;
+  reviewer_name: string;
+  reviewer_email: string;
   reviewDate: string;
   productCount: number;
   orderTotal: number;
 };
 
 type OrderAggregation = {
-  reviewerName: string;
-  reviewerEmail: string;
+  reviewer_name: string;
+  reviewer_email: string;
   reviewDate: string;
   productIds: Set<number>;
   productCount: number;
@@ -52,8 +52,8 @@ function applyReviewToOrders(
   product: ProductsResponse["products"][number],
   review: NonNullable<ProductsResponse["products"][number]["reviews"]>[number],
 ) {
-  const reviewerEmail = review.reviewerEmail.trim().toLowerCase();
-  const reviewerName = review.reviewerName.trim();
+  const reviewerEmail = review.reviewer_email.trim().toLowerCase();
+  const reviewerName = review.reviewer_name.trim();
 
   if (!reviewerEmail) {
     return;
@@ -62,8 +62,8 @@ function applyReviewToOrders(
   const existing = ordersByCustomer.get(reviewerEmail);
   if (!existing) {
     ordersByCustomer.set(reviewerEmail, {
-      reviewerName,
-      reviewerEmail,
+      reviewer_name: reviewerName,
+      reviewer_email: reviewerEmail,
       reviewDate: review.date,
       productIds: new Set<number>([product.id]),
       productCount: 1,
@@ -80,7 +80,7 @@ function applyReviewToOrders(
 
   if (shouldReplaceReviewDate(existing.reviewDate, review.date)) {
     existing.reviewDate = review.date;
-    existing.reviewerName = reviewerName;
+    existing.reviewer_name = reviewerName;
   }
 }
 
@@ -132,9 +132,9 @@ export default async function OrdersPage() {
             </thead>
             <tbody>
                 {orders.map((order) => (
-                <tr key={`${order.orderId}-${order.reviewerEmail}`} className="border-t border-gray-100">
+                <tr key={`${order.orderId}-${order.reviewer_email}`} className="border-t border-gray-100">
                     <td className="px-4 py-3">
-                        <Link href={`mailto:${order.reviewerEmail}`} className="text-blue-500 font-semibold hover:underline">{order.reviewerName}</Link><br />
+                        <Link href={`mailto:${order.reviewer_email}`} className="text-blue-500 font-semibold hover:underline">{order.reviewer_name}</Link><br />
                         <span className="text-gray-500">{order.orderId}</span>
                     </td>
                     <td className="px-4 py-3 text-right text-gray-700">{order.productCount}</td>
