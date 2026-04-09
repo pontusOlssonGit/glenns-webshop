@@ -101,14 +101,14 @@ export default function ProductComponent({ product }: { product: Product }) {
                       <User2 className="w-6 h-6 text-white" />
                     </span>
                     <div>
-                      <span className="font-semibold">{review.reviewerName}</span>
+                      <span className="font-semibold">{review.reviewer_name}</span>
                       <ProductRating productRating={review.rating} />
                     </div>
                     </div>
                     <span className="text-sm text-gray-500 w-30" >{new Date(review.date).toLocaleDateString()}</span>
                   </div>
 
-                  {review.comment}
+                  <span className="text-sm">{review.comment}</span>
                 </li>
               ))}
             </ul>

@@ -8,8 +8,8 @@ import {
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
 type Customer = {
-  reviewerName: string;
-  reviewerEmail: string;
+  reviewer_name: string;
+  reviewer_email: string;
   reviewedProductIds: Set<number>;
   productsBought: number;
   totalSpent: number;
@@ -28,7 +28,7 @@ export default async function CustomersPage() {
 
   for (const product of products) {
     for (const review of product.reviews ?? []) {
-      const email = review.reviewerEmail.trim().toLowerCase();
+      const email = review.reviewer_email.trim().toLowerCase();
 
       if (!email) {
         continue;
@@ -36,8 +36,8 @@ export default async function CustomersPage() {
 
       if (!uniqueCustomersMap.has(email)) {
         uniqueCustomersMap.set(email, {
-          reviewerName: review.reviewerName.trim(),
-          reviewerEmail: review.reviewerEmail.trim(),
+          reviewer_name: review.reviewer_name.trim(),
+          reviewer_email: review.reviewer_email.trim(),
           reviewedProductIds: new Set<number>(),
           productsBought: 0,
           totalSpent: 0,
@@ -59,12 +59,12 @@ export default async function CustomersPage() {
 
   const customers = Array.from(uniqueCustomersMap.values())
     .map((customer) => ({
-      reviewerName: customer.reviewerName,
-      reviewerEmail: customer.reviewerEmail,
+      reviewer_name: customer.reviewer_name,
+      reviewer_email: customer.reviewer_email,
       productsBought: customer.productsBought,
       totalSpent: customer.totalSpent,
     }))
-    .sort((a, b) => a.reviewerName.localeCompare(b.reviewerName, "sv-SE"));
+    .sort((a, b) => a.reviewer_name.localeCompare(b.reviewer_name, "sv-SE"));
 
   return (
     <>
@@ -90,9 +90,9 @@ export default async function CustomersPage() {
             </thead>
             <tbody>
                 {customers.map((customer) => (
-                <tr key={customer.reviewerEmail} className="border-t border-gray-100">
-                    <td className="px-3 py-2 align-middle font-semibold text-blue-500 whitespace-nowrap truncate">{customer.reviewerName}</td>
-                    <td className="px-3 py-2 align-middle">{customer.reviewerEmail}</td>
+                <tr key={customer.reviewer_email} className="border-t border-gray-100">
+                    <td className="px-3 py-2 align-middle font-semibold text-blue-500 whitespace-nowrap truncate">{customer.reviewer_name}</td>
+                    <td className="px-3 py-2 align-middle">{customer.reviewer_email}</td>
                     <td className="px-3 py-2 align-middle text-center">{customer.productsBought}</td>
                     <td className="px-3 py-2 align-middle text-right">{formatPrice(customer.totalSpent)} kr</td>
                     <td className="px-3 py-2 align-middle overflow-hidden text-right flex gap-1 justify-end">
