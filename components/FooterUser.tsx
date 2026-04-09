@@ -4,7 +4,7 @@ export default function FooterUser() {
   return (
 
       <footer className="bg-[#1a1a1d] flex flex-col text-white justify-center pl-35 pr-35 p-10">
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
        
         <div className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold">Kundservice</h3>
