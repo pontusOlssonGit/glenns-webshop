@@ -25,7 +25,7 @@ export default function ContactForm() {
     return (
         <>
             <div className="flex justify-center">
-                <div className="w-full max-w-lg border border-val3/20 rounded-2xl p-10">
+                <div className="w-full max-w-lg border border-gray-300 rounded-2xl p-10">
 
                     {/* Header */}
                     <div className="mb-8">
@@ -39,17 +39,17 @@ export default function ContactForm() {
                     <form id="kontakt" className="grid gap-5">
 
                         <div className="flex flex-col gap-1.5">
-                            <label htmlFor="name" className="text-xs font-medium uppercase tracking-widest text-val2">
+                            <label htmlFor="name" className="text-xs font-medium uppercase tracking-widest text-gray-500">
                                 Namn
                             </label>
                             <input
                                 type="text" id="name" name="name"
                                 placeholder="Kalle Kula" required
-                                className="px-3.5 py-2.5 text-sm rounded-lg border border-val3/40 bg-gray-50 text-gray-500 placeholder:text-val3/60 focus:outline-none focus:border-val3 focus:ring-2 focus:ring-val3/20 focus:bg-white transition-all duration-200" />
+                                className="px-3.5 py-2.5 text-sm rounded-lg border border-gray-300 bg-gray-50 text-gray-500 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:bg-white transition-all duration-200" />
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                            <label htmlFor="email" className="text-xs font-medium uppercase tracking-widest text-val2">
+                            <label htmlFor="email" className="text-xs font-medium uppercase tracking-widest text-gray-500">
                                 E-post
                             </label>
                             <input
@@ -59,7 +59,7 @@ export default function ContactForm() {
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                            <label htmlFor="subject" className="text-xs font-medium uppercase tracking-widest text-val2">
+                            <label htmlFor="subject" className="text-xs font-medium uppercase tracking-widest text-gray-500">
                                 Ämne
                             </label>
                             <select
@@ -92,7 +92,7 @@ export default function ContactForm() {
                             </button>
                             <button
                                 type="button" onClick={RensBaraOmSakerDialog}
-                                className="py-2.5 px-5 rounded-lg border border-gray-400 text-gray-500 text-sm hover:bg-blue-700 hover:text-white hover:border-val2 transition-all duration-200">
+                                className="py-2.5 px-5 rounded-lg border text-white text-sm bg-gray-500 hover:bg-gray-600 transition-all duration-200">
                                 Ångra
                             </button>
                         </div>
