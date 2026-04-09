@@ -25,6 +25,7 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
   - Koppla sök till produktgrid
   - Fungerande varukorg
   - Logga in / Skapa konto
+  - Koppling till Vercel för automatisk publicering efter merge
 - [ ] 🏃 Sprint XX
 - [ ] 🔁 Backlog refinements XX: Genomgång av backlog och justering av uppgifter
 - [ ] 📊 Stakeholders: Demo och presentation
