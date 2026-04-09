@@ -22,7 +22,7 @@ export default function Pagination({
   };
 
   return (
-    <div className="flex justify-center gap-2 mt-8 bg-white p-4">
+    <div className="flex justify-center gap-2 mt-8 bg-white p-10">
       <Link
         href={createPageURL(currentPage - 1)}
         scroll={false}

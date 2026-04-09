@@ -24,7 +24,7 @@ export default function Search2({ products = [], onSearch }: Props) {
         p.price.toString().includes(lower) ||
         (p.reviews?.some(r =>
           r.comment.toLowerCase().includes(lower) ||
-          r.reviewerName.toLowerCase().includes(lower) ||
+          r.reviewer_name.toLowerCase().includes(lower) ||
           r.rating.toString().includes(lower)
         ) ?? false)
       );

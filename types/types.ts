@@ -31,8 +31,8 @@ export interface Product {
     rating: number;
     comment: string;
     date: string;
-    reviewerName: string;
-    reviewerEmail: string;
+    reviewer_name: string;
+    reviewer_email: string;
   }[];
   returnPolicy?: string;
   minimumOrderQuantity?: number;
