@@ -1,8 +1,7 @@
 import { Product, ProductsResponse } from "@/types/types";
 import { createClient } from "@/lib/supabase/server";
 import ProductGrid from "@/components/product-grid";
-import Pagination from "@/components/pagination";
-import { useTransition } from 'react'
+import Pagination2 from "@/components/pagination2";
 
 const ITEMS_PER_PAGE = 20;
 
@@ -43,7 +42,7 @@ export default async function Home({
   return (
     <>
       <ProductGrid products={products} />
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      <Pagination2 currentPage={currentPage} totalPages={totalPages} />
       
     </>
   );
