@@ -25,7 +25,7 @@ export interface Product {
     depth: number;
   };
   warrantyInformation?: string;
-  shippingInformation?: string;
+  shipping_information?: string;
   availability_status?: string;
   reviews?: {
     rating: number;
