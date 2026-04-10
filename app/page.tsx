@@ -2,6 +2,7 @@ import { Product, ProductsResponse } from "@/types/types";
 import { createClient } from "@/lib/supabase/server";
 import ProductGrid from "@/components/product-grid";
 import Pagination from "@/components/pagination";
+import { useTransition } from 'react'
 
 const ITEMS_PER_PAGE = 20;
 
