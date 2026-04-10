@@ -42,7 +42,7 @@ export default function Header({ user }: { user: any }) {
             >
               {category}
 
-              <div className="absolute left-0 pl-5 pr-5 lg:pl-35 lg:pr-35 w-full hidden pt-2 group-hover:block ">
+              <div className="absolute left-0 pl-10 pr-10 lg:pl-35 lg:pr-35 w-full hidden pt-2 group-hover:block ">
                 <div className="bg-white flex flex-col border rounded-b-md shadow-lg overflow-hidden pt-5 pb-5">
                   <div className="flex flex-row items-center">
                     {categories[category as keyof typeof categories]?.icon && (
@@ -60,7 +60,7 @@ export default function Header({ user }: { user: any }) {
                     <Link
                       key={subcategory}
                       href={`/category/${subcategory.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="block py-2 hover:underline text-black border-l-2 border-gray-300 pl-4"
+                      className="block py-2 hover:underline text-black md:border-l-2 border-gray-300 pl-4"
                     >
                       <span className="hover:underline">{subcategory}</span>
                     </Link>
