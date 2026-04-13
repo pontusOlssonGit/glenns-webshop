@@ -7,6 +7,8 @@ type CartStore = {
   deleteProduct: (product: Product) => void;
   incrementQuantity: (cartItem: CartItem) => void;
   decrementQuantity: (cartItem: CartItem) => void;
+  iconRect: { right: number; bottom: number } | null;
+  setIconRect: (rect: { right: number; bottom: number } | null) => void;
 };
 
 export const useCartStore = create<CartStore>((set) => ({
@@ -37,4 +39,6 @@ export const useCartStore = create<CartStore>((set) => ({
       ),
     }));
   },
+  iconRect: null,
+  setIconRect: (rect) => set({ iconRect: rect }),
 }));

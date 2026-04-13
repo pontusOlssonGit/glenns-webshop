@@ -1,4 +1,5 @@
 "use client";
+import { useRef } from "react";
 import { ShoppingCartIcon, User2Icon } from "lucide-react";
 import Link from "next/link";
 
@@ -6,6 +7,15 @@ import { signOut } from "@/lib/actions/auth";
 import { useCartStore } from "./Store";
 
 export default function MainNavigation({ user }: { user: any }) {
+  const setIconRect = useCartStore((state) => state.setIconRect);
+  const iconRef = useRef<HTMLAnchorElement>(null);
+  const handleCartClick = () => {
+    if (iconRef.current) {
+      const rect = iconRef.current.getBoundingClientRect();
+      // We store the right and bottom edges to align the modal
+      setIconRect({ right: rect.right, bottom: rect.bottom });
+    }
+  };
   const menu = [
     { title: "Logga in", href: "/login" },
     { title: "Skapa konto", href: "/signup" },
@@ -45,7 +55,9 @@ export default function MainNavigation({ user }: { user: any }) {
           )}
         </div>
         <Link
+          ref={iconRef}
           href="/cart"
+          onClick={handleCartClick}
           className="flex items-center gap-1 relative inline-flex items-center p-3"
         >
           <li>

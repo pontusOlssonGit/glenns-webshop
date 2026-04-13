@@ -9,10 +9,8 @@ export default function Cart() {
     return acc + item.product.price * item.quantity;
   }, 0);
   return (
-    <div className="pt-15 mx-auto! bg-white">
-      <h1 className="text-4xl text-center ">
-        Your Cart ({productsInCart.length} items)
-      </h1>
+    <div className="pt-4 px-5 bg-white">
+      <h1 className="text-2xl mx-2 font-bold border-b-2 pb-4">Varukorg</h1>
       <table className="w-full mt-10!">
         <thead>
           <tr>
