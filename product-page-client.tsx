@@ -14,7 +14,7 @@ export default function ProductsPageClient({ products }: { products: Product[] }
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL,process.env.NEXT_PUBLIC_SUPABASE_KEY);
+      const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.NEXT_PUBLIC_SUPABASE_KEY!);
 
       const { data, error } = await supabase
         .from("products").select("*").limit(100);
