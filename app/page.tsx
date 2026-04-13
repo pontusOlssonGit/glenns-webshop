@@ -1,6 +1,7 @@
 import { Product, ProductsResponse } from "@/types/types";
 import { createClient } from "@/lib/supabase/server";
 import ProductGrid from "@/components/product-grid";
+import Pagination2 from "@/components/pagination2";
 import Pagination from "@/components/pagination";
 import Banner from "@/components/banner";
 
@@ -44,7 +45,7 @@ export default async function Home({
     <>
       <Banner products={[products[0], products[1], products[2]]} />
       <ProductGrid products={products} />
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      <Pagination2 currentPage={currentPage} totalPages={totalPages} />
       
     </>
   );
