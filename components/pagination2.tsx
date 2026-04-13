@@ -14,7 +14,7 @@ export default function pagination2({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-
+  
   const [isPending, startTransition] = useTransition();
 
   const goToPage = (pageNumber: number) => {
@@ -31,14 +31,9 @@ export default function pagination2({
   return (
     <div className="flex justify-center gap-2 mt-8 bg-white p-4">
       <button
-        onClick={() => goToPage(currentPage - 1)}
-        disabled={currentPage <= 1 || isPending}
+        onClick={() => goToPage(currentPage - 1)} disabled={currentPage <= 1 || isPending}
         className={`px-4 py-2 border rounded-full text-white flex items-center ${
-          currentPage <= 1 || isPending
-            ? "bg-gray-500"
-            : "bg-blue-700"
-        }`}
-      >
+          currentPage <= 1 || isPending ? "bg-gray-500": "bg-blue-700"}`}>
         <ChevronLeft className="w-4 h-4" />
       </button>
 
