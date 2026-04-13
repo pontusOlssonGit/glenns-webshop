@@ -5,7 +5,9 @@ import { useCartStore } from "@/components/Store";
 
 export default function Cart() {
   const productsInCart = useCartStore((state) => state.cartItems);
-
+  const totalPrice = productsInCart.reduce((acc, item) => {
+    return acc + item.product.price * item.quantity;
+  }, 0);
   return (
     <div className="pt-15 mx-auto! bg-white">
       <h1 className="text-4xl text-center ">
@@ -38,6 +40,12 @@ export default function Cart() {
           )}
         </tbody>
       </table>
+      {productsInCart.length > 0 && (
+        <div className=" p-4 px-80 bg-gray-50 flex justify-between items-center ">
+          <span className="font-bold">Summa</span>
+          <span>{totalPrice}</span>
+        </div>
+      )}
     </div>
   );
 }
