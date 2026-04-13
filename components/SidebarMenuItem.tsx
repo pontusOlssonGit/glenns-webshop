@@ -2,7 +2,7 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MenuItem } from '../types';
+import { MenuItem } from '@/types/types';
 
 const colorClasses = {
     purple: {

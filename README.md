@@ -1,6 +1,7 @@
 # 🚀 Lexicon grupp projekt - Glennhallen
 Ett fyra veckors slutprojekt som del i intensiv utbildningen [Lexicon Frontend development](https://github.com/Lexicon-Utbildning-Front-end-2025-2026).   
-Uppgiften att fortsätta med en tidigare övning och nu skapa en kundvänlig webbshop. Uppdrag, krav och det agila arbetssättet finns beskrivet i [instruktionsdokumentet](https://github.com/Lexicon-Utbildning-Front-end-2025-2026/projekt-grupparbete)
+Uppgiften att fortsätta med en tidigare övning och nu skapa en kundvänlig webbshop. Uppdrag, krav och det agila arbetssättet finns beskrivet i [instruktionsdokumentet](https://github.com/Lexicon-Utbildning-Front-end-2025-2026/projekt-grupparbete)    
+Uppgiften ska redovisas enligt följande instruktioner [redovisning](https://github.com/Lexicon-Utbildning-Front-end-2025-2026/redovisning-grupparbete/blob/main/README.md)
 
 ## 🌱 Uppstart
 Gruppen valde ut lämpligt projekt att forka för att snabbt komma igång och leverera grundförutsättningarna.   
@@ -18,8 +19,13 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
   - Flytta över data till en databas istället för att arbeta med JSON filerna.
   - Fungerande kontaktformulär
   - Förberedelser för betalnings-, användare- och varukorgsfunktionalitet
-- [ ] 🏃 Sprint 2
-- [ ] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
+- [x] 🏃 Sprint 2
+- [x] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
+  - Enklare paginering
+  - Koppla sök till produktgrid
+  - Fungerande varukorg
+  - Logga in / Skapa konto
+  - Koppling till Vercel för automatisk publicering efter merge
 - [ ] 🏃 Sprint XX
 - [ ] 🔁 Backlog refinements XX: Genomgång av backlog och justering av uppgifter
 - [ ] 📊 Stakeholders: Demo och presentation

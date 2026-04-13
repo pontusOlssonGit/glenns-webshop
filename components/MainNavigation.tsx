@@ -23,7 +23,7 @@ export default function MainNavigation({ user }: { user: any }) {
     <nav className="pt-3 pb-3">
       <ul className="w-full flex justify-around items-center gap-4">
         <span><User2Icon className="text-white w-10 h-10" /></span>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start">
         {!user ? (
           menu.map((item, index) => (
             <li key={index} className="hover:underline text-white">
@@ -35,7 +35,7 @@ export default function MainNavigation({ user }: { user: any }) {
             </li>
           ))
         ) : (
-          <li className="flex flex-col items-center text-white">
+          <li className="flex flex-col items-start text-white">
             <span className="text-xs truncate">{user?.email}</span>
               <span onClick={() => {signOut()}} className="cursor-pointer font-semibold text-sm hover:underline">Logga ut</span>
           </li>

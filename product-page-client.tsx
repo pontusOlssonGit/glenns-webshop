@@ -23,7 +23,7 @@ export default function ProductsPageClient({ products }: { products: Product[] }
       console.log("ERROR:", error);
 
       if (!error && data) {
-        setProducts(data);
+        setFilteredProducts(data);
         setFilteredProducts(data);
       }
     };
@@ -33,8 +33,9 @@ export default function ProductsPageClient({ products }: { products: Product[] }
 
   return (
     <>
-      <Search2 products={products} onSearch={(results, q) => {
-          setQuery(q);
+      <Search2
+        products={products}
+        onSearch={(results) => {
           setFilteredProducts(results);
         }}
       />
