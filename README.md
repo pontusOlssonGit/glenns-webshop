@@ -26,8 +26,10 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
   - Fungerande varukorg
   - Logga in / Skapa konto
   - Koppling till Vercel för automatisk publicering efter merge
-- [ ] 🏃 Sprint XX
-- [ ] 🔁 Backlog refinements XX: Genomgång av backlog och justering av uppgifter
+- [x] 🏃 Sprint 3
+  - Feature complete
+  - Polering och optimering av levererade delar.
+- [ ] 📂 Presentationsplanering  
 - [ ] 📊 Stakeholders: Demo och presentation
 - [ ] 🏁 Retrospective & utvärdering
 
