@@ -6,21 +6,13 @@ import { useCartStore } from "./Store";
 export default function ModalCart({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const dialogReference = useRef<HTMLDialogElement>(null);
-  const iconRect = useCartStore((state) => state.iconRect);
 
   useEffect(() => {
     const dialog = dialogReference.current;
     if (dialog) {
       dialog.showModal();
-
-      if (iconRect) {
-        dialog.style.position = "fixed";
-        dialog.style.top = `${iconRect.bottom + 20}px`;
-        dialog.style.left = `${iconRect.right - 500}px`;
-        dialog.style.margin = "0";
-      }
     }
-  }, [iconRect]);
+  }, []);
 
   return (
     <dialog
@@ -31,7 +23,17 @@ export default function ModalCart({ children }: { children: React.ReactNode }) {
           dialogReference.current?.close();
         }
       }}
-      className="  shadow-2xl backdrop:bg-black/20  overflow-hidden w-[600px] pt-0 m-0"
+      style={
+        {
+          position: "fixed",
+          margin: 0,
+          top: "calc(anchor(--cart-icon bottom) + 10px)",
+          right: "calc(anchor(--cart-icon right) - 50px)",
+          left: "auto",
+          bottom: "auto",
+        } as React.CSSProperties
+      }
+      className="  shadow-2xl backdrop:bg-black/20  overflow-hidden w-[600px]"
     >
       <button
         onClick={() => router.back()}

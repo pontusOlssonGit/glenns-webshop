@@ -54,11 +54,13 @@ export default function MainNavigation({ user }: { user: any }) {
             </li>
           )}
         </div>
+
         <Link
           ref={iconRef}
           href="/cart"
           onClick={handleCartClick}
-          className="flex items-center gap-1 relative inline-flex items-center p-3"
+          style={{ anchorName: "--cart-icon" } as React.CSSProperties}
+          className=" p-3"
         >
           <li>
             <ShoppingCartIcon
