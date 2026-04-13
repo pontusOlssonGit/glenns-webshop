@@ -25,7 +25,7 @@ export default function ModalCart({ children }: { children: React.ReactNode }) {
       }}
       style={
         {
-          position: "fixed",
+          position: "absolute",
           margin: 0,
           top: "calc(anchor(--cart-icon bottom) + 10px)",
           right: "calc(anchor(--cart-icon right) - 50px)",
