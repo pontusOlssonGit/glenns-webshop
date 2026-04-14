@@ -18,7 +18,7 @@ export default function Banner ({products}: {products?: Product[]}) {
             height={400}
             className="w-full object-cover rounded-md"
         />
-        <div className='flex flex-col gap-4 pl-4 justify-center items-start'>
+        <div className='hidden xl:flex xl:flex-col gap-4 lg:pl-4 justify-center items-start'>
           <h2 className='text-lg font-semibold'>Upptäck våra senaste produkter!</h2>
           {products && products.map((product) => (
             <div key={product.id} className='flex flex-row items-center justify-center w-full gap-4 p-2 border-b border-gray-200'>
