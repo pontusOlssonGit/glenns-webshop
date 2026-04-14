@@ -1,32 +1,41 @@
-import CartTableRow from "@/components/CartTableRow";
-import { ProductsResponse, Product } from "@/types/types";
+"use client";
+import { CartItem, Product } from "@/types/types";
+import { useCartStore } from "@/components/Store";
+import CartCard from "@/components/CartCard";
 
-export default async function Cart() {
-  const API_URL = "http://localhost:4000";
-  const defaultLimit = 4;
-
-  const { products }: ProductsResponse = await fetch(
-    `${API_URL}/products/?_limit=${defaultLimit}&_sort=id&_order=asce`,
-  ).then((res) => res.json());
+export default function Cart() {
+  const productsInCart = useCartStore((state) => state.cartItems);
+  const totalPrice = productsInCart.reduce((acc, item) => {
+    return acc + item.product.price * item.quantity;
+  }, 0);
   return (
-    <div className="pt-15 mx-auto! bg-white">
-      <h1 className="text-4xl text-center ">Your Cart (4 items)</h1>
-      <table className="w-full mt-10!">
-        <thead>
-          <tr>
-            <th></th>
-            <th className="px-2">Product</th>
-            <th className="px-4 text-right">Price</th>
-            <th className="px-2 text-center">Quantity</th>
-            <th className="px-2 text-center">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {(products || []).map((product: Product) => (
-            <CartTableRow key={product.id} product={product} />
-          ))}
-        </tbody>
-      </table>
+    <div className="pt-4 px-5 bg-white flex flex-col gap-6 ">
+      <h1 className="text-2xl mx-2 font-bold border-b-2 pb-4 border-black">
+        Varukorg
+      </h1>
+
+      <div className="divide-y divide-[#d6d6d6]">
+        {productsInCart.length > 0 ? (
+          productsInCart.map((cartItem: CartItem) => (
+            <div key={cartItem.product.id}>
+              <CartCard key={cartItem.product.id} product={cartItem.product} />
+            </div>
+          ))
+        ) : (
+          <article>
+            <span className="text-center py-10 text-gray-500 justify-center flex">
+              Din varukorg är tom
+            </span>
+          </article>
+        )}
+      </div>
+
+      {productsInCart.length > 0 && (
+        <div className=" p-2  flex justify-between items-center bg-[#f6f6f6]">
+          <span className="font-bold">Summa:</span>
+          <span>{Math.ceil(totalPrice)} kr</span>
+        </div>
+      )}
     </div>
   );
 }
