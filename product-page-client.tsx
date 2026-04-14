@@ -24,7 +24,6 @@ export default function ProductsPageClient({ products }: { products: Product[] }
 
       if (!error && data) {
         setFilteredProducts(data);
-        setFilteredProducts(data);
       }
     };
 
