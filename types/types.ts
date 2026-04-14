@@ -25,14 +25,14 @@ export interface Product {
     depth: number;
   };
   warrantyInformation?: string;
-  shippingInformation?: string;
+  shipping_information?: string;
   availability_status?: string;
   reviews?: {
     rating: number;
     comment: string;
     date: string;
-    reviewerName: string;
-    reviewerEmail: string;
+    reviewer_name: string;
+    reviewer_email: string;
   }[];
   returnPolicy?: string;
   minimumOrderQuantity?: number;

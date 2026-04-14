@@ -39,7 +39,7 @@ export default function ProductComponent({ product }: { product: Product }) {
 
           <div className="bg-gray-50 w-full rounded-lg p-2 text-left">
             <h2 className="font-extrabold">Lagerstatus</h2>
-            <span className="text-sm flex gap-1 items-center">
+            <span className="text-sm flex gap-1 items-center pt-1">
               {product.availability_status === "I lager" ? (
                 <span className="flex items-center gap-1">
                   <Check className="w-4 h-4 text-green-900" /> I lager
@@ -53,7 +53,9 @@ export default function ProductComponent({ product }: { product: Product }) {
                   <X className="w-4 h-4 text-red-600" /> Slut i lager
                 </span>
               )}
+              <span>({product.stock} st)</span>
             </span>
+            <span className="text-xs">{product.shipping_information}</span>
           </div>
 
           <div className="bg-gray-50 w-full rounded-lg p-2 text-left">
@@ -114,7 +116,7 @@ export default function ProductComponent({ product }: { product: Product }) {
                     </span>
                   </div>
 
-                  {review.comment}
+                  <span className="text-sm">{review.comment}</span>
                 </li>
               ))}
             </ul>

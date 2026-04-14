@@ -12,11 +12,17 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
   const addToCartButtonText = <ShoppingCartIcon />;
   return (
     <section>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-white p-2">
+        {products.length === 0 && (
+          <div className="col-span-full text-center py-20">
+            <h2 className="text-2xl font-semibold mb-4">Inga produkter hittades</h2>
+            <p className="text-gray-600">Försök att ändra dina sökkriterier eller ta bort några filter.</p>
+          </div>
+        )}
         {products.map((product) => (
           <div
             key={product.id}
-            className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto relative"
+            className="p-4 border-b border-gray-300 cursor-pointer grid gap-2 justify-center items-center mt-auto relative"
           >
             <AddToCartButton
               product={product}
