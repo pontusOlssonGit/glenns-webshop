@@ -23,7 +23,7 @@ export default function MainNavigation({ user }: { user: any }) {
         <span>
           <User2Icon className="text-white w-10 h-10" />
         </span>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-start">
           {!user ? (
             menu.map((item, index) => (
               <li key={index} className="hover:underline text-white">
