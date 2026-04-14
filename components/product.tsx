@@ -106,7 +106,7 @@ export default function ProductComponent({ product }: { product: Product }) {
                       </span>
                       <div>
                         <span className="font-semibold">
-                          {review.reviewer_Name}
+                          {review.reviewer_name}
                         </span>
                         <ProductRating productRating={review.rating} />
                       </div>
