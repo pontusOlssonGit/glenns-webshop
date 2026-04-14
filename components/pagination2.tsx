@@ -4,10 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
 
-export default function pagination2({
-  currentPage,
-  totalPages,
-}: {
+export default function pagination2({currentPage,totalPages,}: {
   currentPage: number;
   totalPages: number;
 }) {
