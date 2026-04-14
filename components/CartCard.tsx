@@ -1,24 +1,38 @@
-import { Product } from "@/types/types";
+"use client";
+import { CartItem, Product } from "@/types/types";
 import { useCartStore } from "./Store";
 import { Trash2 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function CartCard({ product }: { product: Product }) {
-  const cartItems = useCartStore((state) => state.cartItems);
-  const deleteProductInCart = useCartStore((state) => state.deleteProduct);
-  const incrementProductQuantity = useCartStore(
-    (state) => state.incrementQuantity,
-  );
-  const decrementProductQuantity = useCartStore(
-    (state) => state.decrementQuantity,
-  );
+  // prettier-ignore
+  const { decrementQuantity, deleteProduct, incrementQuantity, cartItems } = useCartStore();
   const cartItem = cartItems.find((c) => c.product.id == product.id);
   const cartItemQuantity = cartItem?.quantity;
+
+  const [showToast, setShowToast] = useState(false);
+
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => setShowToast(false), 5000);
+      return () => clearTimeout(timer); // Cleanup if component unmounts
+    }
+  }, [showToast]);
+
+  function handleDecrementQuantity(cartItem: CartItem) {
+    if (cartItem.quantity > 1) {
+      decrementQuantity(cartItem);
+    } else {
+      setShowToast(true);
+    }
+  }
+
   function formatPrice(value: number) {
-    // return Number(value).toLocaleString("sv-SE");
     return Math.ceil(Number(value)).toLocaleString("sv-SE");
   }
+
   return (
-    <article className="flex justify-between">
+    <article className="flex justify-between pb-3">
       <div className="flex">
         <img
           src={product.thumbnail}
@@ -46,7 +60,7 @@ export default function CartCard({ product }: { product: Product }) {
               <div className="flex">
                 <button
                   className="flex items-center justify-center pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-[24px] w-[24px] rounded-bl-full rounded-tl-full"
-                  onClick={() => decrementProductQuantity(cartItem)}
+                  onClick={() => handleDecrementQuantity(cartItem)}
                 >
                   <span className=" text-xl">-</span>
                 </button>
@@ -55,14 +69,14 @@ export default function CartCard({ product }: { product: Product }) {
                 </div>
                 <button
                   className="flex items-center justify-center pr-1 pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-[24px] w-[24px] rounded-br-full rounded-tr-full "
-                  onClick={() => incrementProductQuantity(cartItem)}
+                  onClick={() => incrementQuantity(cartItem)}
                 >
                   <span className="text-xl">+</span>
                 </button>
               </div>
             )}
             <button
-              onClick={() => deleteProductInCart(product)}
+              onClick={() => deleteProduct(product)}
               type="button"
               className="text-red-600 bg-red-200 p-1 rounded-2xl hover:bg-red-700 hover:text-white"
             >
@@ -71,6 +85,15 @@ export default function CartCard({ product }: { product: Product }) {
           </div>
         </div>
       </div>
+      {showToast && (
+        <div className="fixed inset-0 flex items-center justify-center z-9999 pointer-events-none">
+          <div className="bg-gray-900/90 text-white px-6 py-3 rounded-full shadow-2xl animate-in fade-in zoom-in duration-300">
+            <p className="text-sm font-medium">
+              Ta bort produkter från kundvagn med kryss-knappen
+            </p>
+          </div>
+        </div>
+      )}
     </article>
   );
 }
