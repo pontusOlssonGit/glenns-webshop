@@ -42,7 +42,7 @@ export default function Header({ user }: { user: any }) {
             >
               {category}
 
-              <div className="absolute left-0 pl-10 pr-10 lg:pl-35 lg:pr-35 w-full hidden pt-2 group-hover:block ">
+              <div className="absolute z-50 left-0 pl-10 pr-10 lg:pl-35 lg:pr-35 w-full hidden pt-2 group-hover:block ">
                 <div className="bg-white flex flex-col border rounded-b-md shadow-lg overflow-hidden pt-5 pb-5">
                   <div className="flex flex-row items-center">
                     {categories[category as keyof typeof categories]?.icon && (
