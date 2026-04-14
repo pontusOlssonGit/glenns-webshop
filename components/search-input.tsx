@@ -70,7 +70,7 @@ export default function SearchInput() {
         />
         {isOpen && (
           <div ref={dropdownRef}>
-            <ul className="bg-white rounded-lg shadow-xl absolute z-10 w-full">
+            <ul className="bg-white rounded-lg shadow-xl absolute z-50 w-full">
               {results.map((product: Product) => (
                 <li
                   className="cursor-pointer p-2"
