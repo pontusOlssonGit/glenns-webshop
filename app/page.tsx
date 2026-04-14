@@ -2,7 +2,6 @@ import { Product, ProductsResponse } from "@/types/types";
 import { createClient } from "@/lib/supabase/server";
 import ProductGrid from "@/components/product-grid";
 import Pagination2 from "@/components/pagination2";
-import Pagination from "@/components/pagination";
 import Banner from "@/components/banner";
 
 const ITEMS_PER_PAGE = 20;
