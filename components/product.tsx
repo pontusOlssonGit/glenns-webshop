@@ -5,6 +5,9 @@ import { Check, Square, User2, X } from "lucide-react";
 import AddToCartButton from "./AddToCartButton";
 
 export default function ProductComponent({ product }: { product: Product }) {
+  // prettier-ignore
+  const addToCartButtonStyle ="px-6 py-3 w-full rounded-full bg-[#3338ff] text-white mt-6 hover:bg-[#1e21ff] transition-colors";
+  const addToCartButtonText = "Lägg i varukorg";
   return (
     <main className="bg-white flex flex-col gap-4 p-20">
       <h1 className="text-3xl font-extrabold mb-4">{product.title}</h1>
@@ -25,7 +28,11 @@ export default function ProductComponent({ product }: { product: Product }) {
             {Math.ceil(product.price)} kr
           </h2>
           <span className="text-sm text-gray-500">(Excluding Glenn Tax)</span>
-          <AddToCartButton product={product} />
+          <AddToCartButton
+            product={product}
+            buttonStyle={addToCartButtonStyle}
+            buttonText={addToCartButtonText}
+          />
           <span className="font-semibold">
             Gratis frakt vid köp över 500 000 kr
           </span>

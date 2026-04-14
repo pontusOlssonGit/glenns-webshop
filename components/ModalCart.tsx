@@ -32,7 +32,7 @@ export default function ModalCart({ children }: { children: React.ReactNode }) {
           bottom: "auto",
         } as React.CSSProperties
       }
-      className="  shadow-2xl backdrop:bg-black/20  overflow-hidden w-[600px]"
+      className="  shadow-2xl backdrop:bg-black/20  overflow-hidden w-150"
     >
       <button
         onClick={() => router.back()}
