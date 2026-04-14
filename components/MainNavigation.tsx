@@ -7,15 +7,7 @@ import { signOut } from "@/lib/actions/auth";
 import { useCartStore } from "./Store";
 
 export default function MainNavigation({ user }: { user: any }) {
-  const setIconRect = useCartStore((state) => state.setIconRect);
   const iconRef = useRef<HTMLAnchorElement>(null);
-  const handleCartClick = () => {
-    if (iconRef.current) {
-      const rect = iconRef.current.getBoundingClientRect();
-      // We store the right and bottom edges to align the modal
-      setIconRect({ right: rect.right, bottom: rect.bottom });
-    }
-  };
   const menu = [
     { title: "Logga in", href: "/login" },
     { title: "Skapa konto", href: "/signup" },
@@ -58,7 +50,6 @@ export default function MainNavigation({ user }: { user: any }) {
         <Link
           ref={iconRef}
           href="/cart"
-          onClick={handleCartClick}
           style={{ anchorName: "--cart-icon" } as React.CSSProperties}
           className=" p-3"
         >
@@ -72,7 +63,15 @@ export default function MainNavigation({ user }: { user: any }) {
             />
           </li>
           {numberCartItems > 0 && (
-            <span className="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
+            <span
+              style={
+                {
+                  top: "anchor(--cart-icon top)",
+                  right: "anchor(--cart-icon right)",
+                } as React.CSSProperties
+              }
+              className="absolute flex h-5 w-5  items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white"
+            >
               {numberCartItems}
             </span>
           )}

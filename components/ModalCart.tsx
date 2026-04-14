@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useCartStore } from "./Store";
 
 export default function ModalCart({ children }: { children: React.ReactNode }) {
   const router = useRouter();
