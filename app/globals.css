@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
 
-@tailwind utilities;
+/* @tailwind utilities; */
 
 @layer utilities {
   .paused {
@@ -10,6 +10,16 @@
   .running {
     animation-play-state: running;
   }
+}
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --color-val1: var(--color-val1);
+  --color-val2: var(--color-val2);
+  --color-val3: var(--color-val3);
+  --color-val4: var(--color-val4);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 @theme {
   --font-roboto: "Roboto", sans-serif;
@@ -117,14 +127,4 @@ textarea {
   --color-val4: #dbafa0;
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme {
-  --font-roboto: "Roboto", sans-serif;
-  --color-val1: var(--color-val1);
-  --color-val2: var(--color-val2);
-  --color-val3: var(--color-val3);
-  --color-val4: var(--color-val4);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
 }
