@@ -10,13 +10,13 @@ export default function Banner ({products}: {products?: Product[]}) {
         <h1 className="text-md font-semibold">Fri frakt över 500 000 kr.</h1>
         <p className="text-sm text-gray-700 pb-4">Din destination för de bästa produkterna.</p>
 
-        <div className='flex flex-col xl:flex-row gap-2 bg-white p-6'>
+        <div className='flex flex-col xl:flex-row justify-center gap-2 bg-white p-6'>
         <div>
         <Image 
             src={"/assets/banner.png"}
             alt="Banner Image"
-            width={800}
-            height={400}
+            width={1200}
+            height={600}
             className="w-full object-cover rounded-md h-full"
         />
         </div>
