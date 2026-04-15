@@ -1,4 +1,4 @@
-import { Product } from "../types";
+import { Product } from "@/types/types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
 
@@ -50,7 +50,7 @@ export function buildProductUpdatePayload(values: ProductFormValues): Partial<Pr
     categoryId: values.categoryId,
     brand: values.brand,
     thumbnail: values.thumbnail,
-    availabilityStatus,
+    availability_status: availabilityStatus,
   };
 }
 

@@ -14,21 +14,16 @@ export default function ProductsPageClient({ products }: { products: Product[] }
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_KEY
-      );
+      const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.NEXT_PUBLIC_SUPABASE_KEY!);
 
       const { data, error } = await supabase
-        .from("products")
-        .select("*")
-        .limit(100);
+        .from("products").select("*").limit(100);
 
       console.log("DATA:", data);
       console.log("ERROR:", error);
 
       if (!error && data) {
-        setProducts(data);
+        setFilteredProducts(data);
         setFilteredProducts(data);
       }
     };
@@ -40,16 +35,12 @@ export default function ProductsPageClient({ products }: { products: Product[] }
     <>
       <Search2
         products={products}
-        onSearch={(results, q) => {
-          setQuery(q);
+        onSearch={(results) => {
           setFilteredProducts(results);
         }}
       />
 
-      <Filter
-        products={products}
-        query={query}
-        onFilter={setFilteredProducts}
+      <Filter products={products} query={query} onFilter={setFilteredProducts}
       />
 
       <ProductGrid products={filteredProducts} />

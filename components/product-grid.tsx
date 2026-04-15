@@ -1,24 +1,42 @@
 "use client";
 import { Product } from "@/types/types";
-import { Check, Square, SquareArrowDownIcon, StarIcon, X } from "lucide-react";
+import { Check, ShoppingCartIcon, Square, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ProductRating from "./product-rating";
+import AddToCartButton from "./AddToCartButton";
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
-  console.log(products);
-
+  const productGridStyle =
+    "px-2 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg transition-all hover:border-white/30w-fit hover:bg-[#1e21ff] hover:text-white absolute top-2 right-2";
+  const addToCartButtonText = <ShoppingCartIcon />;
   return (
     <div>
       <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-white p-2">
+          {products.length === 0 && (
+            <div className="col-span-full text-center py-20">
+              <h2 className="text-2xl font-semibold mb-4">
+                Inga produkter hittades
+              </h2>
+              <p className="text-gray-600">
+                Försök att ändra dina sökkriterier eller ta bort några filter.
+              </p>
+            </div>
+          )}
           {products.map((product) => (
             <div
               key={product.id}
-              className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto"
+              className="p-4 border-b border-gray-300 cursor-pointer grid gap-2 justify-center items-center mt-auto relative"
             >
+              <AddToCartButton
+                product={product}
+                buttonStyle={productGridStyle}
+                buttonText={addToCartButtonText}
+              />
               <Link
                 href={`/products/${product.id}`}
+                prefetch={false}
                 className="w-full items-center justify-center flex flex-col"
               >
                 <Image
@@ -100,14 +118,30 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
         </div>
       </section>
       <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-white p-2">
+          {products.length === 0 && (
+            <div className="col-span-full text-center py-20">
+              <h2 className="text-2xl font-semibold mb-4">
+                Inga produkter hittades
+              </h2>
+              <p className="text-gray-600">
+                Försök att ändra dina sökkriterier eller ta bort några filter.
+              </p>
+            </div>
+          )}
           {products.map((product) => (
             <div
               key={product.id}
-              className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto"
+              className="p-4 border-b border-gray-300 cursor-pointer grid gap-2 justify-center items-center mt-auto relative"
             >
+              <AddToCartButton
+                product={product}
+                buttonStyle={productGridStyle}
+                buttonText={addToCartButtonText}
+              />
               <Link
                 href={`/products/${product.id}`}
+                prefetch={false}
                 className="w-full items-center justify-center flex flex-col"
               >
                 <Image

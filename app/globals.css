@@ -1,7 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
 
-/* @tailwind utilities; */
+:root {
+  --color-val1: 49243E;
+  --color-val2: 704264;
+  --color-val3: BB8493;
+  --color-val4: DBAFA0;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@tailwind utilities;
 
 @layer utilities {
   .paused {
@@ -13,41 +22,38 @@
 }
 
 @theme {
-  --font-roboto: "Roboto", sans-serif;
-  --color-val1: var(--color-val1);
-  --color-val2: var(--color-val2);
-  --color-val3: var(--color-val3);
-  --color-val4: var(--color-val4);
+  --color-val1: var(color-val1);
+  --color-val2: var(color-val2);
+  --color-val3: var(color-val3);
+  --color-val4: var(color-val4);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-}
-@theme {
-  --font-roboto: "Roboto", sans-serif;
-  --color-val1: var(--color-val1);
-  --color-val2: var(--color-val2);
-  --color-val3: var(--color-val3);
-  --color-val4: var(--color-val4);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   --animate-loop-scroll: loop-scroll 50s linear infinite;
 
-  @keyframes wiggle {
-    0%,
-    100% {
-      transform: rotate(-3deg);
-    }
-    50% {
-      transform: rotate(3deg);
-    }
+  /* --tab-size-2: 2;
+  --tab-size-4: 4;
+  --tab-size-github: 8; */
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
   }
-  @keyframes loop-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+@keyframes loop-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
@@ -127,4 +133,14 @@ textarea {
   --color-val4: #dbafa0;
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --color-val1: var(--color-val1);
+  --color-val2: var(--color-val2);
+  --color-val3: var(--color-val3);
+  --color-val4: var(--color-val4);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }

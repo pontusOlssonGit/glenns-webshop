@@ -1,7 +1,5 @@
 import ProductComponent from "@/components/product";
 import { createClient } from "@/lib/supabase/server";
-import { ProductsResponse } from "@/types/types";
-import { log } from "console";
 import { notFound } from "next/navigation";
 
 export default async function ProductPage({ params}: { params: Promise<{ id: number }>}) {
