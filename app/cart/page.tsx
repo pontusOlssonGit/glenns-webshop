@@ -2,6 +2,7 @@
 import { CartItem, Product } from "@/types/types";
 import { useCartStore } from "@/components/Store";
 import CartCard from "@/components/CartCard";
+import ToCheckOutButton from "@/components/ToCheckoutButton";
 
 export default function Cart() {
   const productsInCart = useCartStore((state) => state.cartItems);
@@ -36,6 +37,8 @@ export default function Cart() {
           <span>{Math.ceil(totalPrice)} kr</span>
         </div>
       )}
+      <ToCheckOutButton />
+      <div className="border-t w-full border-[#d6d6d6] pb-3"></div>
     </div>
   );
 }
