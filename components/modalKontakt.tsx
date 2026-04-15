@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
+import RouterBackButton from "./RouterBackButton"
 
 export default function ModalKontakt({ children }: { children: React.ReactNode }) {
     const router = useRouter()
@@ -22,6 +23,7 @@ export default function ModalKontakt({ children }: { children: React.ReactNode }
             className=" relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[50%] min-w-xs rounded-2xl shadow-blue-950/50 backdrop:bg-blue-950/50 backdrop:backdrop-blur-sm">
 
             {children}
+            <RouterBackButton />
         </dialog>
     )
 }

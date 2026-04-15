@@ -25,7 +25,7 @@ export default function ContactForm() {
     return (
         <>
             <div className="flex justify-center">
-                <div className="w-full max-w-lg border border-gray-300 rounded-2xl p-10">
+                <div className="w-full max-w-lg rounded-2xl p-10">
 
                     {/* Header */}
                     <div className="mb-8">
