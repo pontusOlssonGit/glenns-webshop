@@ -13,7 +13,7 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
 - [x] 🤝 Projektkickoff: Bestämma arbetssätt, scope och gemensam målbild
 - [x] 👥 Roadmap: Prioriteringar, ambitionsnivå
 - [x] ⚙️ Initiering: Skapa projekt, repo och kanban. Userstories och tasks förbereds
-- [x] 🏃 Sprint 1: Uppfylla grundkraven för projektet såsom beskrivts
+- [x] 🏃 Sprint 1: Uppfylla grundkraven för projektet såsom beskrivts ovan.
 - [x] 🔁 Backlog refinements: Genomgång av backlog och justering av uppgifter
 - [x] ⏫ Levelup: Välja ut passande delar för vidare utveckling av applikationen
   - Flytta över data till en databas istället för att arbeta med JSON filerna.
@@ -21,17 +21,21 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
   - Förberedelser för betalnings-, användare- och varukorgsfunktionalitet
 - [x] 🏃 Sprint 2
 - [x] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
-  - Enklare paginering
+  - Flytt av data ifrån JSON till Supabase
   - Koppla sök till produktgrid
-  - Fungerande varukorg
   - Logga in / Skapa konto
   - Koppling till Vercel för automatisk publicering efter merge
 - [x] 🏃 Sprint 3
+  - Enklare paginering
+  - Fungerande varukorg
+  - Sektion för Hero/Banner 
+- [ ] 🏃 Sprint 4
   - Feature complete
   - Polering och optimering av levererade delar.
 - [ ] 📂 Presentationsplanering  
-- [ ] 📊 Stakeholders: Demo och presentation
 - [ ] 🏁 Retrospective & utvärdering
+- [ ] 📊 Stakeholders: Demo och presentation
+
 
 # 👥 Gruppmedlemmar G5
 <table>
