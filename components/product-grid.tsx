@@ -7,46 +7,147 @@ import ProductRating from "./product-rating";
 
 const ProductGrid = ({ products }: { products: Product[] }) => {
   console.log(products);
-  
+
   return (
-    <section>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto"
-          >
-            <Link href={`/products/${product.id}`} className="w-full items-center justify-center flex flex-col">
-            <Image
-              src={product.thumbnail}
-              alt={product.title}
-              width={200}
-              height={200}
-            />
-            <h3 className="text-md font-semibold mb-2 hover:underline">
-              {product.title}
-            </h3>
-            </Link>
-            <p className="text-gray-600 mb-4 text-xs">{product.description}</p>
-            <div className="flex items-center justify-end w-full">
-              <span className="text-sm font-bold">{Math.ceil(product.price)} kr</span>
+    <div>
+      <section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto"
+            >
+              <Link
+                href={`/products/${product.id}`}
+                className="w-full items-center justify-center flex flex-col"
+              >
+                <Image
+                  src={product.thumbnail}
+                  alt={product.title}
+                  width={200}
+                  height={200}
+                />
+                <h3 className="text-md font-semibold mb-2 hover:underline">
+                  {product.title}
+                </h3>
+              </Link>
+              <p className="text-gray-600 mb-4 text-xs">
+                {product.description}
+              </p>
+              <div className="flex items-center justify-end w-full">
+                <span className="text-sm font-bold">
+                  {Math.ceil(product.price)} kr
+                </span>
+              </div>
+              <div className="flex items-center justify-between w-full">
+                <ProductRating productRating={product.rating} />
+                <span className="text-xs flex gap-1 items-center">
+                  Webblager{" "}
+                  {product.availability_status === "In Stock" ||
+                  product.availability_status === "I lager" ? (
+                    <Check className="w-4 h-4 text-green-900" />
+                  ) : product.availability_status === "Low Stock " ||
+                    product.availability_status === "Låg lager" ? (
+                    <Square className="w-4 h-4 text-yellow-600" />
+                  ) : (
+                    <X className="w-4 h-4 text-red-600" />
+                  )}
+                </span>
+              </div>
             </div>
-            <div className="flex items-center justify-between w-full">
-              <ProductRating productRating={product.rating} />
-              <span className="text-xs flex gap-1 items-center">
-                Webblager {product.availability_status === "In Stock" || product.availability_status === "I lager" ? (
-                 <Check className="w-4 h-4 text-green-900" />
-                ) : product.availability_status === "Low Stock " || product.availability_status === "Låg lager" ? (
-                  <Square className="w-4 h-4 text-yellow-600" />
-                ) : (
-                 <X className="w-4 h-4 text-red-600" />
-                )}
-              </span>
+          ))}
+        </div>
+      </section>
+      <section className="flex flex-col bg-yellow-300 border-yellow-600 rounded-sm p-4 mt-4">
+        <div className="overflow-hidden group">
+          <div className=" animate-loop-scroll group-hover:paused">
+            <div className="flex flex-row border-yellow-600 rounded-sm p-4 mt-4">
+              {products.map((product) => (
+                <div key={product.id} className="">
+                  <Link href={`/products/${product.id}`} className="">
+                    <Image
+                      className=""
+                      src={product.thumbnail}
+                      alt={product.title}
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+          <div
+            className=" animate-loop-scroll group-hover:paused"
+            aria-hidden="true"
+          >
+            <div className="flex flex-row border-yellow-600 rounded-sm p-4 mt-4">
+              {products.map((product) => (
+                <div key={product.id} className="">
+                  <Link href={`/products/${product.id}`} className="">
+                    <Image
+                      className=""
+                      src={product.thumbnail}
+                      alt={product.title}
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-white">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="p-4 border-b border-gray-300 rounded-sm cursor-pointer grid gap-2 justify-center items-center mt-auto"
+            >
+              <Link
+                href={`/products/${product.id}`}
+                className="w-full items-center justify-center flex flex-col"
+              >
+                <Image
+                  src={product.thumbnail}
+                  alt={product.title}
+                  width={200}
+                  height={200}
+                />
+                <h3 className="text-md font-semibold mb-2 hover:underline">
+                  {product.title}
+                </h3>
+              </Link>
+              <p className="text-gray-600 mb-4 text-xs">
+                {product.description}
+              </p>
+              <div className="flex items-center justify-end w-full">
+                <span className="text-sm font-bold">
+                  {Math.ceil(product.price)} kr
+                </span>
+              </div>
+              <div className="flex items-center justify-between w-full">
+                <ProductRating productRating={product.rating} />
+                <span className="text-xs flex gap-1 items-center">
+                  Webblager{" "}
+                  {product.availability_status === "In Stock" ||
+                  product.availability_status === "I lager" ? (
+                    <Check className="w-4 h-4 text-green-900" />
+                  ) : product.availability_status === "Low Stock " ||
+                    product.availability_status === "Låg lager" ? (
+                    <Square className="w-4 h-4 text-yellow-600" />
+                  ) : (
+                    <X className="w-4 h-4 text-red-600" />
+                  )}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 
