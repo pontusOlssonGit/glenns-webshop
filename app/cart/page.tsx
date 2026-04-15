@@ -14,7 +14,7 @@ export default function Cart() {
       <h1 className="text-2xl mx-2 font-bold border-b-2 pb-4 border-black">
         Varukorg
       </h1>
-
+      {productsInCart.length > 5 && <ToCheckOutButton />}
       <div className="divide-y divide-[#d6d6d6]">
         {productsInCart.length > 0 ? (
           productsInCart.map((cartItem: CartItem) => (
