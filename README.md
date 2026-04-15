@@ -7,35 +7,45 @@ Uppgiften ska redovisas enligt följande instruktioner [redovisning](https://git
 Gruppen valde ut lämpligt projekt att forka för att snabbt komma igång och leverera grundförutsättningarna.   
 All utveckling sker i feature-branches och pushas tillsammans in i dev för gemensam hantering av eventuella konflikter och kod-återkoppling.   
 Userstories och tasks skrivs in och följs upp i [GitHub Projects](https://github.com/users/pontusOlssonGit/projects/5)  
-Fokus på leveransen med återkommande möten 2-3ggr i veckan.   
+
+## ⚙️ Arbetssätt
+Deltagarna fick själva välja ut vilka delar de var intresserade av att implementera och därefter arbeta tillsammans med likasinnade eller självständigt.
+
+## 📅 Möten
+För att kunna fokusera på leveransen valde gruppen varannandags-principen. 60min möte två-tre ggr i veckan för avstämning och gemensam synkronisering.
 
 ## 🛣️ Tänkt väg framåt
 - [x] 🤝 Projektkickoff: Bestämma arbetssätt, scope och gemensam målbild
 - [x] 👥 Roadmap: Prioriteringar, ambitionsnivå
 - [x] ⚙️ Initiering: Skapa projekt, repo och kanban. Userstories och tasks förbereds
 - [x] 🏃 Sprint 1: Uppfylla grundkraven för projektet såsom beskrivts ovan.
+  - Struktur för landningssidan
+    - Sidhuvud
+    - Loggotyp
+    - Placeholders för användare och varukorg
+    - Enkel sök
+    - Produktgrid
+    - Produktsida
+    - Sidfot
+  - Readme
 - [x] 🔁 Backlog refinements: Genomgång av backlog och justering av uppgifter
 - [x] ⏫ Levelup: Välja ut passande delar för vidare utveckling av applikationen
-  - Flytta över data till en databas istället för att arbeta med JSON filerna.
-  - Fungerande kontaktformulär
-  - Förberedelser för betalnings-, användare- och varukorgsfunktionalitet
 - [x] 🏃 Sprint 2
-- [x] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
-  - Flytt av data ifrån JSON till Supabase
+  - Intercepting routes uppsatta för modala dialogrutor
   - Koppla sök till produktgrid
-  - Logga in / Skapa konto
+  - Autentisering Logga in / Skapa konto 
   - Koppling till Vercel för automatisk publicering efter merge
 - [x] 🏃 Sprint 3
   - Enklare paginering
+  - Filtrering efter produktkategorier
   - Fungerande varukorg
-  - Sektion för Hero/Banner 
+  - Sektion för Hero/Banner
 - [ ] 🏃 Sprint 4
   - Feature complete
   - Polering och optimering av levererade delar.
 - [ ] 📂 Presentationsplanering  
 - [ ] 🏁 Retrospective & utvärdering
 - [ ] 📊 Stakeholders: Demo och presentation
-
 
 # 👥 Gruppmedlemmar G5
 <table>
