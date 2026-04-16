@@ -3,9 +3,18 @@ import { CartItem, Product } from "@/types/types";
 import { useCartStore } from "@/components/Store";
 import CartCard from "@/components/CartCard";
 import ToCheckOutButton from "@/components/ToCheckoutButton";
+import { useHasHydrated } from "@/lib/useHasHydrated";
 
 export default function Cart() {
   const productsInCart = useCartStore((state) => state.cartItems);
+  const hasHydrated = useHasHydrated();
+  if (!hasHydrated) {
+    return (
+      <div className="pt-4 px-5 bg-white flex flex-col gap-6 items-center justify-center min-h-[200px]">
+        <p className="text-gray-400">Laddar din varukorg...</p>
+      </div>
+    );
+  }
   const totalPrice = productsInCart.reduce((acc, item) => {
     return acc + item.product.price * item.quantity;
   }, 0);
