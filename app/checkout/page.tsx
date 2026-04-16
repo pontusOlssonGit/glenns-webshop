@@ -27,7 +27,8 @@ export default function CheckoutPage() {
     }
   }, [productsInCart]);
 
-  if (productsInCart.length === 0) return <div>Your cart is empty</div>;
+  if (productsInCart.length === 0)
+    return <div className="text-center">Din varukorg är tom</div>;
   if (!clientSecret) return <div>Initializing checkout...</div>;
   return (
     <main>
