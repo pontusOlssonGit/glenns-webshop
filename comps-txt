@@ -1,4 +1,3 @@
-/45/ /CartTableRow.tsx
 /46/ /ClientSideHeader.tsx
 /47/ /ContactForm.tsx
 /48/ /filter.tsx
@@ -28,3 +27,4 @@
 /74/ /SidebarMenuItem.tsx
 /75/ /SidebarUserDisplayWidget.tsx
 /76/ /skrivEpost.ts
+
