@@ -23,10 +23,9 @@ const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
 );
 
-function PaymentForm() {
+function PaymentForm({ amount }: { amount: number }) {
   const stripe = useStripe();
   const elements = useElements();
-
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,7 +44,7 @@ function PaymentForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3002/success",
+        return_url: `${window.location.origin}/success`,
       },
     });
 
@@ -67,9 +66,23 @@ function PaymentForm() {
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <button disabled={isLoading || !stripe || !elements} id="submit">
+      <div className="flex justify-between">
+        <span>Totalbelopp</span>
+        <span>{Math.ceil(amount)} kr</span>
+      </div>
+      <button
+        className="w-full pt-4"
+        disabled={isLoading || !stripe || !elements}
+        id="submit"
+      >
         <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+          {isLoading ? (
+            <div className="spinner" id="spinner"></div>
+          ) : (
+            <div className="px-6 py-3 w-full rounded-full bg-[#3338ff] text-white mt-6 hover:bg-[#1e21ff] transition-colors">
+              Slutför betalning
+            </div>
+          )}
         </span>
       </button>
       {/* Show any error or success messages */}
@@ -80,15 +93,17 @@ function PaymentForm() {
 
 export default function CheckoutForm({
   clientSecret,
+  amount,
 }: {
   clientSecret: string;
+  amount: number;
 }) {
   const appearance: Appearance = {
     theme: "stripe",
   };
   return (
     <Elements stripe={stripePromise} options={{ appearance, clientSecret }}>
-      <PaymentForm />
+      <PaymentForm amount={amount} />
     </Elements>
   );
 }
