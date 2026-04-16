@@ -1,9 +1,9 @@
 "use client";
-import { CartItem, Product } from "@/types/types";
 import { useCartStore } from "@/components/Store";
-import CartCard from "@/components/CartCard";
 import ToCheckOutButton from "@/components/ToCheckoutButton";
 import { useHasHydrated } from "@/lib/useHasHydrated";
+import CartContent from "@/components/CartContent";
+import CartTotal from "@/components/CartTotal";
 
 export default function Cart() {
   const productsInCart = useCartStore((state) => state.cartItems);
@@ -24,28 +24,9 @@ export default function Cart() {
         Varukorg
       </h1>
       {productsInCart.length > 5 && <ToCheckOutButton />}
-      <div className="divide-y divide-[#d6d6d6]">
-        {productsInCart.length > 0 ? (
-          productsInCart.map((cartItem: CartItem) => (
-            <div key={cartItem.product.id}>
-              <CartCard key={cartItem.product.id} product={cartItem.product} />
-            </div>
-          ))
-        ) : (
-          <article>
-            <span className="text-center py-10 text-gray-500 justify-center flex">
-              Din varukorg är tom
-            </span>
-          </article>
-        )}
-      </div>
+      <CartContent productsInCart={productsInCart} />
 
-      {productsInCart.length > 0 && (
-        <div className=" p-2  flex justify-between items-center bg-[#f6f6f6]">
-          <span className="font-bold">Summa:</span>
-          <span>{Math.ceil(totalPrice)} kr</span>
-        </div>
-      )}
+      {productsInCart.length > 0 && <CartTotal totalPrice={totalPrice} />}
       <ToCheckOutButton />
       <div className="border-t w-full border-[#d6d6d6] pb-3"></div>
     </div>
