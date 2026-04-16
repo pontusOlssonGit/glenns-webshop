@@ -12,7 +12,7 @@ export interface Product {
   categoryId: number;
   category?: Category;
   price: number;
-  discountPercentage?: number;
+  discount_percentage?: number;
   rating?: number;
   stock?: number;
   tags?: string[];
