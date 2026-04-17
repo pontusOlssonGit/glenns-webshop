@@ -1,6 +1,6 @@
 "use client";
 
-import { useCartStore } from "@/components/Store";
+import { useCartStore } from "@/store/useCartStore";
 import {
   amountForStripe,
   calculateTotalPrice,

@@ -1,14 +1,6 @@
-import { CartItem, Product } from "@/types/types";
+import { CartStore } from "@/types/types";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-
-type CartStore = {
-  cartItems: CartItem[];
-  addProduct: (cartItem: CartItem) => void;
-  deleteProduct: (product: Product) => void;
-  incrementQuantity: (cartItem: CartItem) => void;
-  decrementQuantity: (cartItem: CartItem) => void;
-};
 
 export const useCartStore = create<CartStore>()(
   persist(

@@ -1,5 +1,5 @@
 "use client";
-import { useCartStore } from "@/components/Store";
+import { useCartStore } from "@/store/useCartStore";
 import ToCheckOutButton from "@/components/ToCheckoutButton";
 import { useHasHydrated } from "@/lib/useHasHydrated";
 import CartContent from "@/components/CartContent";

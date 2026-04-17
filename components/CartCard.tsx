@@ -1,9 +1,9 @@
 "use client";
 import { CartItem, Product } from "@/types/types";
-import { useCartStore } from "./Store";
+import { useCartStore } from "../store/useCartStore";
 import { Trash2 } from "lucide-react";
 import Toast from "./Toast";
-import useToast from "./hooks/useToast";
+import useToast from "../hooks/useToast";
 
 export default function CartCard({ product }: { product: Product }) {
   // prettier-ignore
