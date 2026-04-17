@@ -16,7 +16,7 @@ export default function ProductCarousel({ displayProducts }: { displayProducts: 
               <div className="rounded-2xl bg-white h-full p-8 text-center flex flex-col items-center justify-between shadow-lg">
                 <Image
                   src={product.thumbnail}
-                  alt={product.title}
+                  alt=""
                   width={200}
                   height={200}
                   className="mx-auto rounded-lg"

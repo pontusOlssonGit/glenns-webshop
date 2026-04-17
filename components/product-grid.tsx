@@ -55,7 +55,7 @@ const ProductGrid = ({ products }: { products: Product[] }) => {
               >
                 <Image
                   src={product.thumbnail}
-                  alt={product.title}
+                  alt=""
                   width={200}
                   height={200}
                 />
