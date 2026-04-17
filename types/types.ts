@@ -66,3 +66,10 @@ export interface CartItem {
   product: Product;
   quantity: number;
 }
+export interface CartStore {
+  cartItems: CartItem[];
+  addProduct: (cartItem: CartItem) => void;
+  deleteProduct: (product: Product) => void;
+  incrementQuantity: (cartItem: CartItem) => void;
+  decrementQuantity: (cartItem: CartItem) => void;
+}

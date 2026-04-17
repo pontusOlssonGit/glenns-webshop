@@ -1,8 +1,9 @@
 "use client";
 import { CartItem, Product } from "@/types/types";
-import { useCartStore } from "./Store";
+import { useCartStore } from "../store/useCartStore";
 import { Trash2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import Toast from "./Toast";
+import useToast from "../hooks/useToast";
 
 export default function CartCard({ product }: { product: Product }) {
   // prettier-ignore
@@ -10,20 +11,13 @@ export default function CartCard({ product }: { product: Product }) {
   const cartItem = cartItems.find((c) => c.product.id == product.id);
   const cartItemQuantity = cartItem?.quantity;
 
-  const [showToast, setShowToast] = useState(false);
-
-  useEffect(() => {
-    if (showToast) {
-      const timer = setTimeout(() => setShowToast(false), 5000);
-      return () => clearTimeout(timer); // Cleanup if component unmounts
-    }
-  }, [showToast]);
+  const [showToast, triggerToast] = useToast();
 
   function handleDecrementQuantity(cartItem: CartItem) {
     if (cartItem.quantity > 1) {
       decrementQuantity(cartItem);
     } else {
-      setShowToast(true);
+      triggerToast();
     }
   }
 
@@ -59,16 +53,16 @@ export default function CartCard({ product }: { product: Product }) {
             {cartItem && (
               <div className="flex">
                 <button
-                  className="flex items-center justify-center pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-[24px] w-[24px] rounded-bl-full rounded-tl-full"
+                  className="flex items-center justify-center pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-6 w-6 rounded-bl-full rounded-tl-full"
                   onClick={() => handleDecrementQuantity(cartItem)}
                 >
                   <span className=" text-xl">-</span>
                 </button>
-                <div className="box-border border border-[#d6d6d6] h-[24px] w-[36px] text-center ">
+                <div className="box-border border border-[#d6d6d6] h-6 w-9 text-center ">
                   {cartItemQuantity}
                 </div>
                 <button
-                  className="flex items-center justify-center pr-1 pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-[24px] w-[24px] rounded-br-full rounded-tr-full "
+                  className="flex items-center justify-center pr-1 pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-6 w-6 rounded-br-full rounded-tr-full "
                   onClick={() => incrementQuantity(cartItem)}
                 >
                   <span className="text-xl">+</span>
@@ -86,13 +80,7 @@ export default function CartCard({ product }: { product: Product }) {
         </div>
       </div>
       {showToast && (
-        <div className="fixed inset-0 flex items-center justify-center z-9999 pointer-events-none">
-          <div className="bg-gray-900/90 text-white px-6 py-3 rounded-full shadow-2xl animate-in fade-in zoom-in duration-300">
-            <p className="text-sm font-medium">
-              Ta bort produkter från kundvagn med kryss-knappen
-            </p>
-          </div>
-        </div>
+        <Toast message={"Ta bort produkter från kundvagn med kryss-knappen"} />
       )}
     </article>
   );
