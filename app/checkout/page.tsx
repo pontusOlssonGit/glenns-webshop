@@ -33,7 +33,7 @@ export default function CheckoutPage() {
   return (
     <main>
       {/* Added 'gap-8' so the blue shows between the boxes */}
-      <div className="flex justify-between bg-blue-800 min-h-screen p-8 gap-8">
+      <div className="flex justify-between bg-white min-h-screen p-8 gap-8">
         {/* Added 'flex-1' and '!' to force the border to stay */}
         <div className="flex-1  p-6">
           <div id="checkout">
