@@ -66,9 +66,9 @@ function PaymentForm({ amount }: { amount: number }) {
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <div className="flex justify-between">
+      <div className="flex justify-between pt-4">
         <span>Totalbelopp</span>
-        <span>{Math.ceil(amount)} kr</span>
+        <span className="font-bold">{Math.ceil(amount)} kr</span>
       </div>
       <button
         className="w-full pt-4"

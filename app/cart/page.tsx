@@ -20,7 +20,7 @@ export default function Cart() {
   }, 0);
   return (
     <div className="pt-4 px-5 bg-white flex flex-col gap-6 ">
-      <h1 className="text-2xl mx-2 font-bold border-b-2 pb-4 border-black">
+      <h1 className="text-2xl mx-2 font-bold border-b pb-4 border-gray-300">
         Varukorg
       </h1>
       {productsInCart.length > 5 && <ToCheckOutButton />}
