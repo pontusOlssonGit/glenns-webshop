@@ -53,16 +53,16 @@ export default function CartCard({ product }: { product: Product }) {
             {cartItem && (
               <div className="flex">
                 <button
-                  className="flex items-center justify-center pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-[24px] w-[24px] rounded-bl-full rounded-tl-full"
+                  className="flex items-center justify-center pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-6 w-6 rounded-bl-full rounded-tl-full"
                   onClick={() => handleDecrementQuantity(cartItem)}
                 >
                   <span className=" text-xl">-</span>
                 </button>
-                <div className="box-border border border-[#d6d6d6] h-[24px] w-[36px] text-center ">
+                <div className="box-border border border-[#d6d6d6] h-6 w-9 text-center ">
                   {cartItemQuantity}
                 </div>
                 <button
-                  className="flex items-center justify-center pr-1 pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-[24px] w-[24px] rounded-br-full rounded-tr-full "
+                  className="flex items-center justify-center pr-1 pb-1 bg-[#d6d6d6] text-[#58585a] hover:bg-[#58585a] hover:text-[#d6d6d6] h-6 w-6 rounded-br-full rounded-tr-full "
                   onClick={() => incrementQuantity(cartItem)}
                 >
                   <span className="text-xl">+</span>
