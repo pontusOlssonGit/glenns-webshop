@@ -63,6 +63,7 @@ export default function SearchInput() {
       <div className="relative">
         <input
           type="text"
+          aria-label="Sök"
           placeholder="Sök bland över 16 000 produkter"
           className=" placeholder:text-gray-700 bg-white w-full z-20 rounded-full px-4 py-3 focus:outline-none focus:shadow-md focus:shadow-gray-400"
           onChange={(e) => setSearchTerm(e.target.value)}

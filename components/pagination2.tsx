@@ -28,8 +28,10 @@ export default function pagination2({currentPage,totalPages,}: {
   return (
     <div className="flex justify-center gap-2 mt-8 bg-white p-4">
       <button
+      aria-label="Previous Page"
         onClick={() => goToPage(currentPage - 1)} disabled={currentPage <= 1 || isPending}
         className={`px-4 py-2 border rounded-full text-white flex items-center ${
+          
           currentPage <= 1 || isPending ? "bg-gray-500": "bg-blue-700"}`}>
         <ChevronLeft className="w-4 h-4" />
       </button>
@@ -43,6 +45,7 @@ export default function pagination2({currentPage,totalPages,}: {
       <button
         onClick={() => goToPage(currentPage + 1)}
         disabled={currentPage >= totalPages || isPending}
+        aria-label="Next Page"
         className={`px-4 py-2 border rounded-full text-white flex items-center ${
           currentPage >= totalPages || isPending
             ? "bg-gray-500"

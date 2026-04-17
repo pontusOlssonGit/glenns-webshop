@@ -33,6 +33,7 @@ export default function AddToCartButton({
       onClick={() => handleOnClick(cartItem)}
       type="button"
       className={buttonStyle}
+      aria-label="Add to Cart"
     >
       <span className="font-semibold">{buttonText}</span>
     </button>

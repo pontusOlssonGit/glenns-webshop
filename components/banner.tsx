@@ -14,7 +14,7 @@ export default function Banner ({products}: {products?: Product[]}) {
         <div>
         <Image 
             src={"/assets/banner.png"}
-            alt="Banner Image"
+            alt=""
             width={1200}
             height={600}
             className="w-full object-cover rounded-md h-full"
@@ -26,7 +26,7 @@ export default function Banner ({products}: {products?: Product[]}) {
             <div key={product.id} className='flex flex-row items-center justify-start w-full gap-4 p-2 border-b border-gray-200'>
               <Image
                 src={product.thumbnail}
-                alt={product.title}
+                alt=""
                 width={50}
                 height={50}
                 className="rounded"

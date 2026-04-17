@@ -54,7 +54,7 @@ export default function CartCard({ product }: { product: Product }) {
       <div className="flex">
         <div className="flex flex-col text-right">
           <div>{formatPrice(product.price)} kr</div>
-          <div className="flex justify-around">
+          <div className="flex justify-around gap-2">
             {" "}
             {cartItem && (
               <div className="flex">
