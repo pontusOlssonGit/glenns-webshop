@@ -2,11 +2,12 @@
 import { useRef } from "react";
 import { ShoppingCartIcon, User2Icon } from "lucide-react";
 import Link from "next/link";
-
 import { signOut } from "@/lib/actions/auth";
 import { useCartStore } from "./Store";
+import { useHasHydrated } from "@/lib/useHasHydrated";
 
 export default function MainNavigation({ user }: { user: any }) {
+  const hasHydrated = useHasHydrated(); //
   const iconRef = useRef<HTMLAnchorElement>(null);
   const menu = [
     { title: "Logga in", href: "/login" },
@@ -17,6 +18,7 @@ export default function MainNavigation({ user }: { user: any }) {
     (acc, item) => acc + item.quantity,
     0,
   );
+
   return (
     <nav className="pt-3 pb-3">
       <ul className="w-full flex justify-around items-center gap-4">
@@ -56,13 +58,13 @@ export default function MainNavigation({ user }: { user: any }) {
           <li>
             <ShoppingCartIcon
               className={
-                numberCartItems == 0
+                hasHydrated && numberCartItems == 0
                   ? "text-gray-600 w-10 h-10"
                   : "text-white w-10 h-10"
               }
             />
           </li>
-          {numberCartItems > 0 && (
+          {hasHydrated && numberCartItems > 0 && (
             <span
               style={
                 {
