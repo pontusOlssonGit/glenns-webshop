@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function Search2({ products = [], onSearch }: Props) {
-  const [query, setQuery] = useState("");
+  const [query,setQuery] = useState("");
 
   const searchProducts = (q: string) => {
     const lower = q.toLowerCase();
