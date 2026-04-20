@@ -52,6 +52,37 @@ Installera projektets beroenden med valfri pakethanterare:
 ```bash
 npm install
 ```
+### Beroenden
+Följande beroenden till externa komponenter installeras:
+#### Runtime
+- @stripe/react-stripe-js ver. ^6.2.0
+- @stripe/stripe-js ver. ^9.2.0
+- @supabase/ssr ver. ^0.9.0
+- @supabase/supabase-js ver. ^2.99.0
+- @vercel/analytics ver. ^2.0.1
+- @vercel/speed-insights ver. ^2.0.0
+- cookie ver. ^1.1.1
+- dotenv ver. ^17.4.0
+- lucide-react ver. ^0.575.0
+- next ver. ^16.2.4
+- nodemailer ver. ^8.0.4
+- react ver. 19.2.3
+- react-dom ver. 19.2.3
+- stripe ver. ^22.0.1
+- zustand ver. ^5.0.12
+#### Development
+- @biomejs/biome ver. 2.2.0
+- @tailwindcss/postcss ver. ^4
+- @types/node ver. ^20
+- @types/nodemailer ver. ^7.0.11
+- @types/react ver. ^19
+- @types/react-dom ver. ^19
+- babel-plugin-react-compiler ver. 1.0.0
+- concurrently ver. ^9.2.1
+- json-server ver. ^0.17.4
+- tailwindcss ver. ^4
+- typescript ver. ^5
+
 ## 🌱 Miljövariabler
 Kopiera till en `.env.local`-fil och fyll i dina egna värden:   
 ```
