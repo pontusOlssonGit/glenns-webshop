@@ -49,7 +49,7 @@ Följande krävs för att köra projektet:
   - SMTP server
   - Stripe
 
-Se till att rätt version av Node.js är installerad innan du fortsätter och att din dba konfigurerat supabase med rätt datamodell och autentisiering.
+Se till att rätt version av Node.js är installerad innan du fortsätter och att din dba konfigurerat supabase med rätt datamodell och autentisering .
 
 ## 🚀 Installation
 Installera projektets beroenden med valfri pakethanterare:
