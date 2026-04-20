@@ -54,7 +54,9 @@ npm install
 ```
 ### Beroenden
 Följande beroenden till externa komponenter installeras:
-#### Runtime
+<table>
+<tr><th>Runtime</th><th>Development</th></tr>
+<tr><td>
 - @stripe/react-stripe-js ver. ^6.2.0
 - @stripe/stripe-js ver. ^9.2.0
 - @supabase/ssr ver. ^0.9.0
@@ -70,8 +72,7 @@ Följande beroenden till externa komponenter installeras:
 - react-dom ver. 19.2.3
 - stripe ver. ^22.0.1
 - zustand ver. ^5.0.12
-#### Development
-- @biomejs/biome ver. 2.2.0
+</td><td>- @biomejs/biome ver. 2.2.0
 - @tailwindcss/postcss ver. ^4
 - @types/node ver. ^20
 - @types/nodemailer ver. ^7.0.11
@@ -82,7 +83,9 @@ Följande beroenden till externa komponenter installeras:
 - json-server ver. ^0.17.4
 - tailwindcss ver. ^4
 - typescript ver. ^5
-
+</td>
+</tr>
+</table>
 ## 🌱 Miljövariabler
 Kopiera till en `.env.local`-fil och fyll i dina egna värden:   
 ```
