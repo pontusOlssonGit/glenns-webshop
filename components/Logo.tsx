@@ -6,16 +6,16 @@ export default function Logo() {
   return (
     <section>
       {/* <h2 className="font-roboto text-2xl">Logo</h2> */}
-      <div className="flex flex-wrap">
+      <div className="flex justify-content align-items align-text-bottom justify-start flex-wrap h-18 w-37 border-2 border-gray-200 rounded-lg bg-gray-300 p-1">
         <Image
           loading="eager"
           src={someImage}
           alt="logo of the company Glenns"
-          width={500}
-          height={500}
-          className="flex flex-wrap w-20 h-20 m-0 p-0"
+          width={400}
+          height={400}
+          className="flex flex-wrap w-16 h-16 m-0 p-0"
         />
-        <div className="flex flex-col align-bottom justify-end ml-0 pl-0 pb-1 font-serif text-2xl text-gray-500 text-shadow-[0_2px_4px_rgb(0_0_0_/0.5)]">
+        <div className="flex flex-col align-bottom justify-end pb-0 ml-0 pl-0 font-serif text-2xl text-gray-500 text-shadow-[0_2px_4px_rgb(0_0_0_/0.5)]">
           lenns
         </div>
       </div>

@@ -3,10 +3,9 @@ import "./globals.css";
 import { Lexend } from "next/font/google";
 import Header from "@/components/ClientSideHeader";
 import { createClient } from "@/lib/supabase/server";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import FooterUser from "@/components/FooterUser";
-
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -26,22 +25,23 @@ export default async function RootLayout({
   children: React.ReactNode;
   modal: React.ReactNode;
 }>) {
+  const supabase = await createClient();
 
-  const supabase = await createClient()
-
-  const { data: { user } } = await supabase.auth.getUser()
-
-  
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   return (
     <html lang="en">
-      <body className={`${lexend.className} bg-gray-100 text-gray-900`}>
+      <body className={`${lexend.className} bg-gray-100 text-gray-900 `}>
         <Header user={user} />
-        <div className="pl-10 min-h-screen pr-10 lg:pl-35 lg:pr-35">{children}</div>
+        <div className="pl-10 min-h-screen pr-10 lg:pl-35 lg:pr-35 ">
+          {children}
+        </div>
         {modal}
         <SpeedInsights />
         <Analytics />
-        <FooterUser/>
+        <FooterUser />
       </body>
     </html>
   );

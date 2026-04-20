@@ -28,7 +28,7 @@
 }
 
 @theme {
-  --color-val1: var(color-val1);
+  /* --color-val1: var(color-val1);
   --color-val2: var(color-val2);
   --color-val3: var(color-val3);
   --color-val4: var(color-val4);
@@ -36,14 +36,14 @@
   --color-foreground: var(--foreground);
 
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-geist-mono); */
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   --animate-loop-scroll: loop-scroll 50s linear infinite;
-
-  /* --tab-size-2: 2;
-  --tab-size-4: 4;
-  --tab-size-github: 8; */
+  --animate-loop-scroll-reverse: loop-scroll-reverse 50s linear infinite;
 }
+/* --tab-size-2: 2;
+--tab-size-4: 4;
+--tab-size-github: 8; */
 
 @keyframes wiggle {
   0%,
@@ -54,6 +54,25 @@
     transform: rotate(3deg);
   }
 }
+<<<<<<< HEAD
+=======
+@keyframes loop-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes loop-scroll-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+>>>>>>> f263d40 (this is an alternative product grid version two)
 
 /* =========================  
    Modern CSS Reset
@@ -132,7 +151,7 @@ textarea {
   --background: #ffffff;
   --foreground: #171717;
 }
-
+/* 
 @theme {
   --font-roboto: "Roboto", sans-serif;
   --color-val1: var(--color-val1);
@@ -141,4 +160,4 @@ textarea {
   --color-val4: var(--color-val4);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-}
+} */
