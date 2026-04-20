@@ -58,34 +58,37 @@ Följande beroenden till externa komponenter installeras:
 <tr><th>Runtime</th><th>Development</th></tr>
 <tr>
 <td>
-@stripe/react-stripe-js ver. ^6.2.0<br>
-@stripe/stripe-js ver. ^9.2.0<br>
-@supabase/ssr ver. ^0.9.0<br>
-@supabase/supabase-js ver. ^2.99.0<br>
-@vercel/analytics ver. ^2.0.1<br>
-@vercel/speed-insights ver. ^2.0.0<br>
-cookie ver. ^1.1.1<br>
-dotenv ver. ^17.4.0<br>
-lucide-react ver. ^0.575.0<br>
-next ver. ^16.2.4<br>
-nodemailer ver. ^8.0.4<br>
-react ver. 19.2.3<br>
-react-dom ver. 19.2.3<br>
-stripe ver. ^22.0.1<br>
-zustand ver. ^5.0.12
-</td>
-<td valign="top">
-@biomejs/biome ver. 2.2.0<br>
-@tailwindcss/postcss ver. ^4<br>
-@types/node ver. ^20<br>
-@types/nodemailer ver. ^7.0.11<br>
-@types/react ver. ^19<br>
-@types/react-dom ver. ^19<br>
-babel-plugin-react-compiler ver. 1.0.0<br>
-concurrently ver. ^9.2.1<br>
-json-server ver. ^0.17.4<br>
-tailwindcss ver. ^4<br>
-typescript ver. ^5
+<ul>
+<li>@stripe/react-stripe-js ver. ^6.2.0</li>
+<li>@stripe/stripe-js ver. ^9.2.0</li>
+<li>@supabase/ssr ver. ^0.9.0</li>
+<li>@supabase/supabase-js ver. ^2.99.0</li>
+<li>@vercel/analytics ver. ^2.0.1</li>
+<li>@vercel/speed-insights ver. ^2.0.0</li>
+<li>cookie ver. ^1.1.1</li>
+<li>dotenv ver. ^17.4.0</li>
+<li>lucide-react ver. ^0.575.0</li>
+<li>next ver. ^16.2.4</li>
+<li>nodemailer ver. ^8.0.4</li>
+<li>react ver. 19.2.3</li>
+<li>react-dom ver. 19.2.3</li>
+<li>stripe ver. ^22.0.1</li>
+<li>zustand ver. ^5.0.12</li>
+</ul>
+</td><td valign="top">
+<ul>
+<li>@biomejs/biome ver. 2.2.0</li>
+<li>@tailwindcss/postcss ver. ^4</li>
+<li>@types/node ver. ^20</li>
+<li>@types/nodemailer ver. ^7.0.11</li>
+<li>@types/react ver. ^19</li>
+<li>@types/react-dom ver. ^19</li>
+<li>babel-plugin-react-compiler ver. 1.0.0</li>
+<li>concurrently ver. ^9.2.1</li>
+<li>json-server ver. ^0.17.4</li>
+<li>tailwindcss ver. ^4</li>
+<li>typescript ver. ^5</li>
+</ul>
 </td>
 </tr>
 </table>
