@@ -29,12 +29,52 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
   - Enklare paginering
   - Fungerande varukorg
   - Sektion för Hero/Banner 
-- [ ] 🏃 Sprint 4
+- [x] 🏃 Sprint 4
   - Feature complete
   - Polering och optimering av levererade delar.
-- [ ] 📂 Presentationsplanering  
+- [x] 📂 Presentationsplanering  
 - [ ] 🏁 Retrospective & utvärdering
 - [ ] 📊 Stakeholders: Demo och presentation
+
+# 🛠️ Projektarbete
+## 📋 Förutsättningar
+Följande krävs för att köra projektet:
+
+- Node.js (>=18)
+- npm, pnpm eller yarn
+- Git
+
+Se till att rätt version av Node.js är installerad innan du fortsätter.
+
+## 🚀 Installation
+Installera projektets beroenden med valfri pakethanterare:
+
+```bash
+npm install
+```
+## 🌱 Miljövariabler
+Kopiera till en `.env.local`-fil och fyll i dina egna värden:   
+```
+SMTP_HOST=SMTP SERVER   
+SMTP_PORT=SMT PORT   
+SMTP_USER=USER_SMTP   
+SMTP_PASS=PWD_SMTP   
+   
+NEXT_PUBLIC_SUPABASE_URL=SUPABASE_URL   
+NEXT_PUBLIC_SUPABASE_KEY=SUPABASE_KEY   
+   
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = STRIP_PUBLIC_KEY   
+STRIPE_SECRET_KEY = STRIPE_SECRET_KEY`
+```
+## 💻 Köra lokalt
+Använd kommandot `npm run dev` för att starta servern.
+Peka sedan din webbläsare av val mot adressen http://localhost:3000 eller om du konfigurerat egen port.
+## 📦 Bygga
+Skapa en produktionsbuild:
+
+```bash
+npm run build
+```
 
 
 # 👥 Gruppmedlemmar G5
