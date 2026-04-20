@@ -36,7 +36,8 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
 - [ ] 🏁 Retrospective & utvärdering
 - [ ] 📊 Stakeholders: Demo och presentation
 
-# 🛠️ Projektarbete
+# 🛠️ Projekt Glennhallen
+![Screencap](./screencap.PNG?raw=true)
 ## 📋 Förutsättningar
 Följande krävs för att köra projektet:
 
