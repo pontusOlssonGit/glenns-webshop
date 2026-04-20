@@ -37,7 +37,7 @@ export default async function Home({
     count: number | null;
     error: any;
   };
-
+ 
   const totalPages = count ? Math.ceil(count / ITEMS_PER_PAGE) : 0;
 
   return (
