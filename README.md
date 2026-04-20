@@ -86,8 +86,8 @@ Följande beroenden till externa komponenter installeras:
 ## 🌱 Miljövariabler
 Kopiera till en `.env.local`-fil och fyll i dina egna värden:   
 ```
-SMTP_HOST=SMTP SERVER   
-SMTP_PORT=SMT PORT   
+SMTP_HOST=SMTP_SERVER   
+SMTP_PORT=SMTP_PORT   
 SMTP_USER=USER_SMTP   
 SMTP_PASS=PWD_SMTP   
    
