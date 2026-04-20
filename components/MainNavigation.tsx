@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { ShoppingCartIcon, User2Icon } from "lucide-react";
 import Link from "next/link";
 import { signOut } from "@/lib/actions/auth";
-import { useCartStore } from "./Store";
+import { useCartStore } from "../store/useCartStore";
 import { useHasHydrated } from "@/lib/useHasHydrated";
 
 export default function MainNavigation({ user }: { user: any }) {
