@@ -31,17 +31,23 @@ export default async function RootLayout({
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  
+
 
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css"
+        />
+      </head>
       <body className={`${lexend.className} bg-gray-100 text-gray-900`}>
         <Header user={user} />
         <div className="pl-10 min-h-screen pr-10 lg:pl-35 lg:pr-35">{children}</div>
         {modal}
         <SpeedInsights />
         <Analytics />
-        <FooterUser/>
+        <FooterUser />
       </body>
     </html>
   );
