@@ -19,8 +19,8 @@ Fokus på leveransen med återkommande möten 2-3ggr i veckan.
   - Flytta över data till en databas istället för att arbeta med JSON filerna.
   - Fungerande kontaktformulär
   - Förberedelser för betalnings-, användare- och varukorgsfunktionalitet
-- [x] 🏃 Sprint 2
 - [x] 🔁 Backlog refinements 2: Genomgång av backlog och justering av uppgifter
+- [x] 🏃 Sprint 2
   - Flytt av data ifrån JSON till Supabase
   - Koppla sök till produktgrid
   - Logga in / Skapa konto
