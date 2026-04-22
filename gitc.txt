@@ -1,3 +1,31 @@
 git stash
 git pull
 git stash pop
+
+
+
+användare klickar "Next"
+   ↓
+Pagination2 → router.push(?page=2)
+   ↓
+Next.js kör page.tsx (server)
+   ↓
+Supabase sök använder range(from, to)
+   ↓
+bara den sidans data returneras
+   ↓
+ProductGrid uppdateras
+
+
+Definera schema (SQL)
+   → skapa tomma tabeller
+
+2. importera data (JSON / inserts)
+   → fyller tabellen med data
+
+3. App söker data
+   → (page.tsx)
+
+
+
+

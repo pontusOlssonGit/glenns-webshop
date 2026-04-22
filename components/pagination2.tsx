@@ -57,3 +57,6 @@ export default function pagination2({currentPage,totalPages,}: {
     </div>
   );
 }
+
+
+
